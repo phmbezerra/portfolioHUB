@@ -130,8 +130,8 @@ Aplicação em Python com cadastro, listagem, atualização e remoção de produ
 
 # Certificação em destaque
 ## Jornada Python — Hashtag Treinamentos
-# Carga horária: 8 horas
-# Conclusão: 18/09/2025
+### Carga horária: 8 horas
+### Conclusão: 18/09/2025
 Essa certificação fortalece minha base prática em Python e complementa os projetos publicados no meu GitHub.
 
 ## Diferenciais deste portfólio
@@ -173,4 +173,4 @@ LinkedIn: linkedin.com/in/paulo-henrique-melo-bezerra-8b1b28372
   ## Obrigado por visitar meu portfólio.
 Se quiser conhecer melhor meu trabalho, acesse a versão online ou entre em contato.
 
-</div> ```
+</div> 
