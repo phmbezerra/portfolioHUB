@@ -156,9 +156,10 @@ cd portfolioHUB
 3. Abra o arquivo index.html no navegador.
 
 ## Contato
-Email: paulohenriquemelobezerra1@gmail.com
-GitHub: github.com/phmbezerra
-LinkedIn: linkedin.com/in/paulo-henrique-melo-bezerra-8b1b28372
+
+- Email: paulohenriquemelobezerra1@gmail.com
+- GitHub: github.com/phmbezerra
+- LinkedIn: linkedin.com/in/paulo-henrique-melo-bezerra-8b1b28372
 
 ## Atualizações futuras
 - Este portfólio continuará sendo atualizado com:
