@@ -1,0 +1,1906 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paulo Henrique | Portfólio de Desenvolvimento Web</title>
+  <meta
+    name="description"
+    content="Portfólio de Paulo Henrique de Melo Bezerra, estudante de Ciência da Computação com foco em desenvolvimento web, interfaces modernas, automação e projetos práticos."
+  />
+  <meta name="theme-color" content="#07111f" />
+  <meta property="og:title" content="Paulo Henrique | Portfólio de Desenvolvimento Web" />
+  <meta
+    property="og:description"
+    content="Projetos práticos com destaque para AccessVault, landing pages, automação em Python, sistemas com SQLite e portfólio profissional publicado."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://phmbezerra.github.io/portfolioHUB/" />
+  <meta property="og:image" content="https://phmbezerra.github.io/portfolioHUB/foto-perfil.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-soft: #0c1a2b;
+      --bg-soft-2: #10233d;
+      --card: rgba(13, 26, 43, 0.78);
+      --card-strong: rgba(10, 20, 34, 0.95);
+      --line: rgba(255,255,255,0.09);
+      --line-strong: rgba(255,255,255,0.16);
+      --text: #e8eefb;
+      --muted: #9fb2cc;
+      --primary: #59a8ff;
+      --primary-2: #7c5cff;
+      --accent: #67e8f9;
+      --success: #86efac;
+      --warning: #facc15;
+      --danger: #f87171;
+      --shadow: 0 18px 60px rgba(0,0,0,0.32);
+      --shadow-soft: 0 10px 30px rgba(0,0,0,0.18);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(124,92,255,0.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(89,168,255,0.16), transparent 24%),
+        linear-gradient(180deg, #07111f 0%, #081424 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button, input, textarea { font: inherit; }
+
+    .bg-grid {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent 95%);
+      opacity: .35;
+    }
+
+    .glow-blob {
+      position: fixed;
+      inset: auto auto 10% -120px;
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(103,232,249,.10), transparent 65%);
+      pointer-events: none;
+      filter: blur(12px);
+    }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: rgba(6,12,22,0.62);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 76px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+
+    .brand-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      box-shadow: 0 10px 30px rgba(89,168,255,0.28);
+      font-size: 14px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .nav-links a {
+      padding: 10px 12px;
+      border-radius: 12px;
+      transition: .2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .hero { padding: 76px 0 40px; }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.18fr .82fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .panel, .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-main {
+      padding: 36px;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero-main::before {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      right: -90px;
+      top: -90px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(89,168,255,.24), transparent 68%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border: 1px solid rgba(103,232,249,0.2);
+      border-radius: 999px;
+      color: #d8f7ff;
+      background: rgba(103,232,249,0.08);
+      font-size: .92rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 5vw, 4.9rem);
+      line-height: 0.96;
+      letter-spacing: -0.05em;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #ffffff 0%, #b6d7ff 45%, #9de7ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 1.06rem;
+      line-height: 1.8;
+      max-width: 700px;
+    }
+
+    .hero-highlight {
+      margin-top: 22px;
+      padding: 16px 18px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border-radius: 18px;
+      color: #dbe8ff;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .btn {
+      border: 0;
+      cursor: pointer;
+      padding: 14px 20px;
+      border-radius: 16px;
+      font-weight: 700;
+      font-size: .98rem;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      color: #07111f;
+      background: linear-gradient(135deg, #8fd4ff 0%, #59a8ff 45%, #7c5cff 100%);
+      box-shadow: 0 14px 32px rgba(89,168,255,0.3);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.18);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 18px;
+      padding: 16px;
+      transition: .2s ease;
+    }
+
+    .stat:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255,255,255,0.14);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.3rem;
+      margin-bottom: 6px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: .92rem;
+      line-height: 1.45;
+    }
+
+    .hero-side {
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .profile-card {
+      padding: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 22px;
+    }
+
+    .profile-photo-wrap {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      aspect-ratio: 1 / 1.08;
+      background: linear-gradient(180deg, rgba(89,168,255,0.18), rgba(124,92,255,0.18));
+    }
+
+    .profile-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .profile-badge {
+      position: absolute;
+      left: 14px;
+      bottom: 14px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(7,17,31,0.72);
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      font-size: .9rem;
+    }
+
+    .mini-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .mini-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      color: var(--muted);
+      font-size: .95rem;
+      padding: 12px 14px;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .mini-item b { color: var(--text); font-weight: 600; }
+
+    .quick-proof {
+      display: grid;
+      gap: 12px;
+    }
+
+    .proof-item {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .proof-item small {
+      color: var(--accent);
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 700;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+    }
+
+    .proof-item p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: .95rem;
+    }
+
+    section { padding: 34px 0; }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 18px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(1.5rem, 3vw, 2.3rem);
+      letter-spacing: -0.03em;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 700px;
+      line-height: 1.7;
+    }
+
+    .about-grid,
+    .projects-grid,
+    .resume-grid,
+    .contact-grid,
+    .recommend-grid,
+    .certificate-grid,
+    .skills-grid,
+    .highlights-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .about-grid { grid-template-columns: 1.15fr .85fr; }
+    .projects-grid { grid-template-columns: repeat(2, 1fr); }
+    .certificate-grid,
+    .resume-grid,
+    .contact-grid,
+    .recommend-grid,
+    .skills-grid,
+    .highlights-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .card {
+      padding: 24px;
+      transition: .2s ease;
+    }
+
+    .card:hover {
+      border-color: var(--line-strong);
+      transform: translateY(-3px);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.18rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+
+    .timeline-item {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .timeline-item span,
+    .label {
+      display: inline-block;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 6px;
+      font-size: .9rem;
+    }
+
+    .timeline-item h4 {
+      margin: 0 0 6px;
+      font-size: 1rem;
+    }
+
+    .timeline-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .95rem;
+      line-height: 1.6;
+    }
+
+    .skills-wrap,
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skills-wrap { margin-top: 18px; }
+    .tag-row { margin-top: 16px; }
+
+    .chip {
+      padding: 11px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      color: #dfe9fb;
+      font-size: .94rem;
+    }
+
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-cover {
+      aspect-ratio: 16 / 10;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 18px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background:
+        linear-gradient(135deg, rgba(89,168,255,.16), rgba(124,92,255,.2)),
+        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0));
+      display: grid;
+      place-items: center;
+      position: relative;
+    }
+
+    .project-cover::before {
+      content: attr(data-label);
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      font-size: .84rem;
+      font-weight: 700;
+      color: #d6efff;
+      background: rgba(7,17,31,.66);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 999px;
+      padding: 8px 10px;
+    }
+
+    .project-cover svg {
+      width: 74px;
+      opacity: .82;
+    }
+
+    .project-card h3 {
+      font-size: 1.18rem;
+      margin-bottom: 10px;
+    }
+
+    .project-points,
+    .metric-list,
+    .resume-list,
+    .contact-box,
+    .recommend-list,
+    .language-list,
+    .achievement-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .project-points {
+      margin: 16px 0;
+    }
+
+    .point {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: .95rem;
+    }
+
+    .point::before {
+      content: "•";
+      color: var(--accent);
+      font-weight: 800;
+      margin-top: 1px;
+    }
+
+    .project-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: auto;
+      flex-wrap: wrap;
+    }
+
+    .featured-project {
+      grid-column: 1 / -1;
+      background: linear-gradient(180deg, rgba(22,40,69,0.98), rgba(10,20,34,0.98));
+      border: 1px solid rgba(89,168,255,0.22);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    }
+
+    .featured-layout {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .featured-panel {
+      padding: 8px;
+    }
+
+    .featured-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: rgba(103,232,249,0.1);
+      color: #d4f8ff;
+      border: 1px solid rgba(103,232,249,0.18);
+      font-size: .88rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .feature-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .feature-metric {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .feature-metric strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1.08rem;
+    }
+
+    .feature-metric span {
+      color: var(--muted);
+      font-size: .92rem;
+      line-height: 1.55;
+    }
+
+    .tiny-btn {
+      padding: 11px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      font-size: .92rem;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+
+    .tiny-btn:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.06);
+    }
+
+    .tiny-btn.primary {
+      background: linear-gradient(135deg, rgba(89,168,255,.2), rgba(124,92,255,.24));
+      border-color: rgba(89,168,255,0.28);
+    }
+
+    .certificate-preview {
+      position: relative;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      min-height: 300px;
+    }
+
+    .certificate-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .certificate-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 42%, rgba(7,17,31,0.9));
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      padding: 18px;
+      gap: 10px;
+    }
+
+    .resume-item,
+    .metric-item,
+    .language-item,
+    .achievement-item,
+    .contact-item,
+    .form-field,
+    .recommendation-card,
+    .skill-card {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .resume-item,
+    .achievement-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .resume-item .dot,
+    .achievement-item .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      margin-top: 8px;
+      flex: 0 0 auto;
+    }
+
+    .resume-item b,
+    .achievement-item b,
+    .metric-item b,
+    .language-item b {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .metric-item strong {
+      display: block;
+      font-size: 1.35rem;
+      margin-bottom: 4px;
+    }
+
+    .metric-item span,
+    .language-item span {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .language-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .language-level {
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      white-space: nowrap;
+      font-size: .9rem;
+      color: #dfe9fb;
+    }
+
+    .skill-card h3 {
+      margin-bottom: 16px;
+    }
+
+    .skill-bars {
+      display: grid;
+      gap: 14px;
+    }
+
+    .skill-row {
+      display: grid;
+      gap: 8px;
+    }
+
+    .skill-row-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: .95rem;
+      color: #eaf2ff;
+    }
+
+    .skill-track {
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.07);
+      overflow: hidden;
+    }
+
+    .skill-fill {
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--primary), var(--primary-2));
+    }
+
+    .contact-item small,
+    .field-label {
+      display: block;
+      color: var(--muted);
+      margin-bottom: 8px;
+      font-size: .85rem;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+    }
+
+    .contact-item a,
+    .contact-item span {
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    .form-field {
+      padding: 14px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .form-field input,
+    .form-field textarea {
+      width: 100%;
+      padding: 14px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(7,17,31,0.75);
+      color: var(--text);
+      outline: none;
+      resize: vertical;
+    }
+
+    .form-field input:focus,
+    .form-field textarea:focus {
+      border-color: rgba(103,232,249,0.45);
+      box-shadow: 0 0 0 4px rgba(103,232,249,0.08);
+    }
+
+    .field-help {
+      color: var(--muted);
+      font-size: .88rem;
+      line-height: 1.5;
+    }
+
+    .status-message {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      display: none;
+      font-size: .95rem;
+      line-height: 1.6;
+    }
+
+    .status-message.success {
+      display: block;
+      background: rgba(134,239,172,0.10);
+      border: 1px solid rgba(134,239,172,0.22);
+      color: #d9ffe8;
+    }
+
+    .status-message.error {
+      display: block;
+      background: rgba(248,113,113,0.10);
+      border: 1px solid rgba(248,113,113,0.22);
+      color: #ffe0e0;
+    }
+
+    .recommend-list {
+      margin-top: 4px;
+      max-height: 660px;
+      overflow: auto;
+      padding-right: 4px;
+    }
+
+    .recommendation-card {
+      display: grid;
+      gap: 12px;
+    }
+
+    .recommendation-top {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .recommendation-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: linear-gradient(135deg, rgba(89,168,255,.25), rgba(124,92,255,.25));
+      flex: 0 0 auto;
+    }
+
+    .recommendation-name {
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .recommendation-date {
+      color: var(--muted);
+      font-size: .88rem;
+      margin-top: 4px;
+    }
+
+    .recommendation-text {
+      color: #dfe9fb;
+      line-height: 1.75;
+      font-size: .97rem;
+      white-space: pre-wrap;
+    }
+
+    .recommendation-empty {
+      color: var(--muted);
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.02);
+      border: 1px dashed rgba(255,255,255,0.08);
+      line-height: 1.7;
+    }
+
+    .glass-note {
+      margin-top: 16px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .social-inline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      color: #e8eefb;
+      font-weight: 600;
+      transition: .2s ease;
+    }
+
+    .social-link:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.16);
+    }
+
+    footer {
+      padding: 24px 0 42px;
+      color: var(--muted);
+    }
+
+    .footer-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 22px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .55s ease, transform .55s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1060px) {
+      .hero-grid,
+      .about-grid,
+      .projects-grid,
+      .certificate-grid,
+      .resume-grid,
+      .contact-grid,
+      .recommend-grid,
+      .skills-grid,
+      .highlights-grid,
+      .featured-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-stats,
+      .feature-metrics {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav { padding: 14px 0; }
+      .nav-links { display: none; }
+      .hero { padding-top: 28px; }
+      .hero-main, .hero-side, .card { padding: 20px; }
+      .hero-stats, .feature-metrics { grid-template-columns: 1fr; }
+      .hero-actions { flex-direction: column; }
+      .btn { width: 100%; }
+      .section-head { align-items: flex-start; flex-direction: column; }
+      .certificate-preview { min-height: 220px; }
+      h1 { line-height: 1.02; }
+      .language-item,
+      .mini-item,
+      .skill-row-top { grid-template-columns: 1fr; display: grid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="glow-blob"></div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#inicio">
+        <div class="brand-badge">PHB</div>
+        <div>Paulo Henrique</div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#sobre">Sobre</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#certificados">Certificados</a>
+        <a href="#curriculo">Currículo</a>
+        <a href="#recomendacoes">Recomendações</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="panel hero-main reveal">
+          <div class="eyebrow">💻 Estudante de Ciência da Computação • CEUB • Brasília/DF</div>
+          <h1><span class="gradient-text">Desenvolvedor web em formação</span><br>com foco em interfaces, sistemas e projetos reais.</h1>
+          <p class="hero-subtitle">
+            Sou Paulo Henrique de Melo Bezerra. Estou construindo uma base profissional sólida em
+            desenvolvimento web com projetos práticos em <strong>HTML, CSS, JavaScript, Python, SQLite, React e GitHub</strong>,
+            transformando estudo em entrega visual, organização e solução real.
+          </p>
+
+          <div class="hero-highlight">
+            Busco oportunidades de estágio onde eu possa contribuir com <strong>front-end</strong>, <strong>modernização de interfaces</strong>,
+            <strong>integração com APIs</strong>, <strong>organização de projetos</strong> e evolução constante em ambientes de tecnologia.
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projetos">Ver projetos</a>
+            <a class="btn btn-secondary" href="https://github.com/phmbezerra" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="btn btn-secondary" href="https://www.linkedin.com/in/paulo-henrique-melo-bezerra-8b1b28372/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="btn btn-secondary" href="curriculo-paulo-henrique.pdf" download>Baixar currículo</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <strong>7 projetos</strong>
+              <span>Portfólio com landing pages, automações em Python, CRUD com SQLite e sistema full stack.</span>
+            </div>
+            <div class="stat">
+              <strong>AccessVault</strong>
+              <span>Projeto em destaque com autenticação, requests, auditoria e dashboard administrativo.</span>
+            </div>
+            <div class="stat">
+              <strong>Web + Dados</strong>
+              <span>Interesse em construir aplicações úteis, organizadas e prontas para uso real.</span>
+            </div>
+            <div class="stat">
+              <strong id="approvedCount">0</strong>
+              <span>Recomendações públicas aprovadas para reforçar confiança e credibilidade.</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="panel hero-side reveal">
+          <div class="profile-card">
+            <div class="profile-photo-wrap">
+              <img src="foto-perfil.jpg" alt="Foto de Paulo Henrique" />
+              <div class="profile-badge">Disponível para estágio em TI • Brasília/DF</div>
+            </div>
+
+            <div class="mini-list">
+              <div class="mini-item"><span>Foco atual</span><b>Desenvolvimento Web / Front-end / Full Stack</b></div>
+              <div class="mini-item"><span>Stack principal</span><b>HTML, CSS, JavaScript, Python, React, SQLite</b></div>
+              <div class="mini-item"><span>Destaque</span><b>Portfólio público + GitHub ativo + projeto autoral</b></div>
+            </div>
+
+            <div class="social-inline">
+              <a class="social-link" href="https://github.com/phmbezerra" target="_blank" rel="noreferrer">GitHub ↗</a>
+              <a class="social-link" href="https://www.linkedin.com/in/paulo-henrique-melo-bezerra-8b1b28372/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+            </div>
+          </div>
+
+          <div class="quick-proof">
+            <div class="proof-item">
+              <small>Como eu trabalho</small>
+              <p>Gosto de construir com organização, boa apresentação visual e foco em transformar requisitos em algo funcional e fácil de entender.</p>
+            </div>
+            <div class="proof-item">
+              <small>Objetivo profissional</small>
+              <p>Entrar no mercado de tecnologia por meio de estágio e crescer com projetos reais, feedback constante e responsabilidade prática.</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><h2>Sobre mim</h2></div>
+          <p>Mais do que estudar tecnologia, eu busco aplicar o que aprendo em projetos reais, organizados, úteis e visualmente bem resolvidos.</p>
+        </div>
+
+        <div class="about-grid">
+          <article class="card reveal">
+            <h3>Quem eu sou</h3>
+            <p>
+              Sou estudante de Ciência da Computação com interesse em desenvolvimento web, automação, interfaces modernas e banco de dados.
+              Procuro evoluir unindo lógica, experiência do usuário e boa apresentação técnica, com projetos que demonstrem iniciativa real.
+            </p>
+            <div class="skills-wrap">
+              <span class="chip">HTML</span>
+              <span class="chip">CSS</span>
+              <span class="chip">JavaScript</span>
+              <span class="chip">React</span>
+              <span class="chip">Python</span>
+              <span class="chip">SQLite</span>
+              <span class="chip">Git & GitHub</span>
+              <span class="chip">Responsividade</span>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3>Resumo da trajetória</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <span>Formação</span>
+                <h4>Ciência da Computação — CEUB</h4>
+                <p>Graduação em andamento, com base em programação, lógica, banco de dados, arquitetura e desenvolvimento de software.</p>
+              </div>
+              <div class="timeline-item">
+                <span>Prática</span>
+                <h4>Projetos próprios e portfólio publicado</h4>
+                <p>Construção de páginas web, automações, sistemas com persistência de dados e um portfólio profissional publicado no GitHub Pages.</p>
+              </div>
+              <div class="timeline-item">
+                <span>Direção</span>
+                <h4>Primeira oportunidade em tecnologia</h4>
+                <p>Atuar com desenvolvimento web e crescer em um time real, contribuindo com disciplina, aprendizado rápido e organização.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <div><h2>Diferenciais em destaque</h2></div>
+          <p>O que fortalece meu perfil para vagas de estágio, projetos acadêmicos e primeiras oportunidades em desenvolvimento.</p>
+        </div>
+
+        <div class="highlights-grid">
+          <article class="card reveal">
+            <span class="label">Prática aplicada</span>
+            <h3>Aprendizado transformado em entrega</h3>
+            <p>Em vez de ficar só na teoria, eu construo projetos com interface, lógica e documentação para mostrar evolução técnica de forma concreta.</p>
+          </article>
+
+          <article class="card reveal">
+            <span class="label">Apresentação profissional</span>
+            <h3>Portfólio pronto para recrutadores</h3>
+            <p>Centralizo currículo, projetos, certificações, links profissionais e recomendações em um ambiente visualmente organizado e público.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="habilidades">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><h2>Habilidades e competências</h2></div>
+          <p>Apresentação visual das principais competências técnicas e comportamentais que venho desenvolvendo durante minha formação.</p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="card skill-card reveal">
+            <h3>Competências técnicas</h3>
+            <div class="skill-bars">
+              <div class="skill-row">
+                <div class="skill-row-top"><span>HTML</span><span>90%</span></div>
+                <div class="skill-track"><div class="skill-fill" style="width: 90%"></div></div>
+              </div>
+              <div class="skill-row">
+                <div class="skill-row-top"><span>CSS</span><span>86%</span></div>
+                <div class="skill-track"><div class="skill-fill" style="width: 86%"></div></div>
+              </div>
+              <div class="skill-row">
+                <div class="skill-row-top"><span>JavaScript</span><span>77%</span></div>
+                <div class="skill-track"><div class="skill-fill" style="width: 77%"></div></div>
+              </div>
+              <div class="skill-row">
+                <div class="skill-row-top"><span>React</span><span>65%</span></div>
+                <div class="skill-track"><div class="skill-fill" style="width: 65%"></div></div>
+              </div>
+              <div class="skill-row">
+                <div class="skill-row-top"><span>Python</span><span>79%</span></div>
+                <div class="skill-track"><div class="skill-fill" style="width: 79%"></div></div>
+              </div>
+              <div class="skill-row">
+                <div class="skill-row-top"><span>SQLite / CRUD</span><span>74%</span></div>
+                <div class="skill-track"><div class="skill-fill" style="width: 74%"></div></div>
+              </div>
+              <div class="skill-row">
+                <div class="skill-row-top"><span>Git e GitHub</span><span>76%</span></div>
+                <div class="skill-track"><div class="skill-fill" style="width: 76%"></div></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card skill-card reveal">
+            <h3>Competências profissionais</h3>
+            <div class="achievement-list">
+              <div class="achievement-item">
+                <div class="dot"></div>
+                <div>
+                  <b>Aprendizado rápido</b>
+                  <span>Consigo absorver novos conteúdos, testar, corrigir e evoluir com consistência.</span>
+                </div>
+              </div>
+              <div class="achievement-item">
+                <div class="dot"></div>
+                <div>
+                  <b>Organização</b>
+                  <span>Busco estruturar bem meus projetos, arquivos, descrições e entregas, tanto no visual quanto na lógica.</span>
+                </div>
+              </div>
+              <div class="achievement-item">
+                <div class="dot"></div>
+                <div>
+                  <b>Capricho na apresentação</b>
+                  <span>Dou atenção à clareza da interface, navegação, espaçamento e legibilidade do que construo.</span>
+                </div>
+              </div>
+              <div class="achievement-item">
+                <div class="dot"></div>
+                <div>
+                  <b>Comprometimento</b>
+                  <span>Tenho foco em concluir projetos, aprender continuamente e transformar orientação em melhoria prática.</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projetos">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><h2>Projetos em destaque</h2></div>
+          <p>Seleção de projetos que demonstram interface, lógica, organização, automação e aplicação prática do que venho estudando.</p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="card project-card featured-project reveal">
+            <div class="featured-layout">
+              <div class="featured-panel">
+                <div class="featured-badge">⭐ Projeto principal</div>
+                <h3 style="font-size: 1.9rem; margin-bottom: 12px;">AccessVault</h3>
+                <p>
+                  Plataforma de gestão de acessos com dashboard administrativo, autenticação, níveis de permissão,
+                  solicitações de acesso, fluxo de aprovação e trilha de auditoria.
+                </p>
+
+                <div class="project-points">
+                  <div class="point">Projeto full stack pensado com cara de produto real, indo além de um CRUD simples.</div>
+                  <div class="point">Inclui login, proteção por perfil, criação de usuários e sistemas, requests de acesso e geração automática de permissões.</div>
+                  <div class="point">Também possui auditoria e filtros no frontend, o que reforça governança, organização e experiência administrativa.</div>
+                </div>
+
+                <div class="skills-wrap">
+                  <span class="chip">React</span>
+                  <span class="chip">FastAPI</span>
+                  <span class="chip">JWT</span>
+                  <span class="chip">SQLite</span>
+                  <span class="chip">Auditoria</span>
+                  <span class="chip">Interface administrativa</span>
+                </div>
+
+                <div class="project-actions" style="margin-top: 18px;">
+                  <a class="tiny-btn primary" href="https://github.com/phmbezerra" target="_blank" rel="noreferrer">Ver GitHub</a>
+                  <a class="tiny-btn" href="#contato">Falar sobre este projeto</a>
+                </div>
+              </div>
+
+              <div class="featured-panel">
+                <div class="feature-metrics">
+                  <div class="feature-metric">
+                    <strong>Autenticação</strong>
+                    <span>Login, controle por perfil e rotas protegidas para operações administrativas.</span>
+                  </div>
+                  <div class="feature-metric">
+                    <strong>Fluxo real</strong>
+                    <span>Solicitar acesso, aprovar ou rejeitar e gerar permissões automaticamente.</span>
+                  </div>
+                  <div class="feature-metric">
+                    <strong>Auditoria</strong>
+                    <span>Registro e visualização de eventos importantes para governança e rastreabilidade.</span>
+                  </div>
+                  <div class="feature-metric">
+                    <strong>UX profissional</strong>
+                    <span>Dashboard com filtros, navegação lateral e seções separadas por contexto.</span>
+                  </div>
+                </div>
+
+                <div class="glass-note" style="margin-top: 18px;">
+                  <strong style="color: var(--text);">Por que ele está em destaque?</strong><br>
+                  Porque mostra arquitetura de sistema, front-end, back-end, autenticação, organização de domínio e visão de produto —
+                  exatamente o tipo de projeto que mais fortalece meu portfólio profissional hoje.
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card project-card reveal">
+            <div class="project-cover" data-label="Projeto Web">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+                <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                <path d="M3 9h18"></path>
+                <path d="M8 15l2-2-2-2"></path>
+                <path d="M13 17l2-8"></path>
+              </svg>
+            </div>
+            <h3>TaskFlow Landing Page</h3>
+            <p>Landing page responsiva com layout moderno, hierarquia visual forte e foco em apresentação clara de produto digital.</p>
+            <div class="project-points">
+              <div class="point">Demonstra domínio de estrutura visual, seção hero, métricas e navegação organizada.</div>
+              <div class="point">Bom exemplo de projeto focado em interface e comunicação visual.</div>
+            </div>
+            <div class="skills-wrap">
+              <span class="chip">HTML</span>
+              <span class="chip">CSS</span>
+              <span class="chip">JavaScript</span>
+              <span class="chip">Responsividade</span>
+            </div>
+            <div class="project-actions">
+              <a class="tiny-btn primary" href="https://github.com/phmbezerra/taskflow-landing-page" target="_blank" rel="noreferrer">Ver código</a>
+            </div>
+          </article>
+
+          <article class="card project-card reveal">
+            <div class="project-cover" data-label="Automação">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+                <path d="M12 2v4"></path>
+                <path d="M12 18v4"></path>
+                <path d="M4.93 4.93l2.83 2.83"></path>
+                <path d="M16.24 16.24l2.83 2.83"></path>
+                <path d="M2 12h4"></path>
+                <path d="M18 12h4"></path>
+                <path d="M4.93 19.07l2.83-2.83"></path>
+                <path d="M16.24 7.76l2.83-2.83"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </div>
+            <h3>Organizador de Arquivos</h3>
+            <p>Script em Python para identificar arquivos por extensão, criar subpastas automaticamente e gerar relatório final de organização.</p>
+            <div class="project-points">
+              <div class="point">Projeto útil e direto, com foco em produtividade e automação de tarefas repetitivas.</div>
+              <div class="point">Mostra raciocínio prático, manipulação de arquivos e lógica aplicada fora do contexto apenas visual.</div>
+            </div>
+            <div class="skills-wrap">
+              <span class="chip">Python</span>
+              <span class="chip">Automação</span>
+              <span class="chip">Organização</span>
+            </div>
+            <div class="project-actions">
+              <a class="tiny-btn primary" href="https://github.com/phmbezerra/organizador-de-arquivos" target="_blank" rel="noreferrer">Ver código</a>
+            </div>
+          </article>
+
+          <article class="card project-card reveal">
+            <div class="project-cover" data-label="Banco de Dados">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+                <ellipse cx="12" cy="5" rx="7" ry="3"></ellipse>
+                <path d="M5 5v6c0 1.7 3.1 3 7 3s7-1.3 7-3V5"></path>
+                <path d="M5 11v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"></path>
+              </svg>
+            </div>
+            <h3>Sistema de Estoque com SQLite</h3>
+            <p>Aplicação em Python com cadastro, listagem, atualização e remoção de produtos, focada em persistência de dados e operações CRUD.</p>
+            <div class="project-points">
+              <div class="point">Simula um cenário real de controle de itens e organização de registros.</div>
+              <div class="point">Reforça minha base em banco de dados, CRUD e estruturação de pequenas aplicações.</div>
+            </div>
+            <div class="skills-wrap">
+              <span class="chip">Python</span>
+              <span class="chip">SQLite</span>
+              <span class="chip">CRUD</span>
+            </div>
+            <div class="project-actions">
+              <a class="tiny-btn primary" href="https://github.com/phmbezerra/sistema-estoque-python" target="_blank" rel="noreferrer">Ver código</a>
+            </div>
+          </article>
+
+          <article class="card project-card reveal">
+            <div class="project-cover" data-label="JavaScript">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+                <path d="M5 7h14"></path>
+                <path d="M7 12h10"></path>
+                <path d="M9 17h6"></path>
+                <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+              </svg>
+            </div>
+            <h3>To-do List JS</h3>
+            <p>Aplicação web de lista de tarefas com filtros, edição e persistência no navegador.</p>
+            <div class="project-points">
+              <div class="point">Projeto clássico, mas importante para demonstrar manipulação de estado e interação com o DOM.</div>
+              <div class="point">Mostra preocupação com usabilidade e com recursos além do mínimo básico.</div>
+            </div>
+            <div class="skills-wrap">
+              <span class="chip">JavaScript</span>
+              <span class="chip">DOM</span>
+              <span class="chip">Local Storage</span>
+            </div>
+            <div class="project-actions">
+              <a class="tiny-btn primary" href="https://github.com/phmbezerra/to-do-list-js" target="_blank" rel="noreferrer">Ver código</a>
+            </div>
+          </article>
+
+          <article class="card project-card reveal">
+            <div class="project-cover" data-label="Projeto Web">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+                <path d="M6 4v16"></path>
+                <path d="M18 4v16"></path>
+                <path d="M6 12h12"></path>
+                <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+              </svg>
+            </div>
+            <h3>Calculadora Web</h3>
+            <p>Calculadora desenvolvida com HTML, CSS e JavaScript para praticar eventos, lógica de operações e interação visual.</p>
+            <div class="project-points">
+              <div class="point">Projeto importante para consolidar fundamentos de interface e comportamento com JavaScript.</div>
+              <div class="point">Reforça domínio de manipulação de eventos, organização visual e funcionalidade útil.</div>
+            </div>
+            <div class="skills-wrap">
+              <span class="chip">HTML</span>
+              <span class="chip">CSS</span>
+              <span class="chip">JavaScript</span>
+            </div>
+            <div class="project-actions">
+              <a class="tiny-btn primary" href="https://github.com/phmbezerra/calculadora-web" target="_blank" rel="noreferrer">Ver código</a>
+            </div>
+          </article>
+
+          <article class="card project-card reveal">
+            <div class="project-cover" data-label="Portfólio">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+                <path d="M12 3l8 4v10l-8 4-8-4V7l8-4z"></path>
+                <path d="M12 12l8-5"></path>
+                <path d="M12 12v9"></path>
+                <path d="M12 12L4 7"></path>
+              </svg>
+            </div>
+            <h3>portfolioHUB</h3>
+            <p>Meu portfólio profissional publicado no GitHub Pages, reunindo apresentação, projetos, currículo, certificações e recomendações públicas.</p>
+            <div class="project-points">
+              <div class="point">Projeto que mostra não só código, mas também preocupação com posicionamento profissional e apresentação.</div>
+              <div class="point">Serve como vitrine central para recrutadores, professores e oportunidades de estágio.</div>
+            </div>
+            <div class="skills-wrap">
+              <span class="chip">HTML</span>
+              <span class="chip">CSS</span>
+              <span class="chip">GitHub Pages</span>
+              <span class="chip">SEO básico</span>
+            </div>
+            <div class="project-actions">
+              <a class="tiny-btn primary" href="https://github.com/phmbezerra/portfolioHUB" target="_blank" rel="noreferrer">Ver código</a>
+              <a class="tiny-btn" href="https://phmbezerra.github.io/portfolioHUB/" target="_blank" rel="noreferrer">Ver site</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="certificados">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><h2>Certificados</h2></div>
+          <p>Formação complementar que reforça minha base prática, especialmente em Python e desenvolvimento orientado à aplicação.</p>
+        </div>
+
+        <div class="certificate-grid">
+          <article class="card reveal">
+            <h3>Jornada Python — Hashtag Treinamentos</h3>
+            <p>
+              Certificação com carga horária de 8 horas, concluída em 18/09/2025, voltada ao fortalecimento da base prática em Python.
+            </p>
+            <div class="achievement-list" style="margin-top: 18px;">
+              <div class="achievement-item">
+                <div class="dot"></div>
+                <div>
+                  <b>Base prática em Python</b>
+                  <span>Consolidação de lógica, estruturação de código e fundamentos úteis para automação e sistemas simples.</span>
+                </div>
+              </div>
+              <div class="achievement-item">
+                <div class="dot"></div>
+                <div>
+                  <b>Coerência com meus projetos</b>
+                  <span>Complementa diretamente os trabalhos em Python presentes no meu GitHub e reforça a consistência do portfólio.</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="certificate-preview">
+              <img src="certificado-python.jpg" alt="Certificado Jornada Python" />
+              <div class="certificate-overlay">
+                <strong>Certificado em destaque</strong>
+                <span style="color: var(--muted);">Mantenha o arquivo visível e em boa resolução para valorizar a apresentação profissional.</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="curriculo">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><h2>Perfil profissional</h2></div>
+          <p>Resumo visual das informações mais importantes para recrutadores, professores e oportunidades de estágio em TI.</p>
+        </div>
+
+        <div class="resume-grid">
+          <article class="card reveal">
+            <h3>Resumo</h3>
+            <p>
+              Estudante de Ciência da Computação com interesse em desenvolvimento web, automação e banco de dados. Perfil colaborativo, proativo e orientado ao aprendizado contínuo, com projetos próprios publicados no GitHub.
+            </p>
+            <div class="resume-list" style="margin-top: 18px;">
+              <div class="resume-item">
+                <div class="dot"></div>
+                <div>
+                  <b>Formação acadêmica</b>
+                  <span>Ciência da Computação — CEUB • 1º semestre • Brasília/DF</span>
+                </div>
+              </div>
+              <div class="resume-item">
+                <div class="dot"></div>
+                <div>
+                  <b>Áreas de interesse</b>
+                  <span>Frontend, backend, automação, lógica aplicada, UX básica e persistência de dados.</span>
+                </div>
+              </div>
+              <div class="resume-item">
+                <div class="dot"></div>
+                <div>
+                  <b>Objetivo</b>
+                  <span>Conquistar uma oportunidade de estágio para crescer tecnicamente e contribuir com projetos reais.</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3>Diferenciais</h3>
+            <div class="resume-list">
+              <div class="resume-item">
+                <div class="dot"></div>
+                <div>
+                  <b>Portfólio próprio</b>
+                  <span>Apresentação profissional com projetos, habilidades, certificação, contato e recomendações públicas.</span>
+                </div>
+              </div>
+              <div class="resume-item">
+                <div class="dot"></div>
+                <div>
+                  <b>Projetos públicos no GitHub</b>
+                  <span>Mostram evolução prática, iniciativa, constância de estudo e organização do aprendizado.</span>
+                </div>
+              </div>
+              <div class="resume-item">
+                <div class="dot"></div>
+                <div>
+                  <b>Projeto full stack em destaque</b>
+                  <span>O AccessVault amplia o nível do portfólio por mostrar visão de sistema e não apenas páginas isoladas.</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="resume-grid" style="margin-top: 18px;">
+          <article class="card reveal">
+            <h3>Idiomas</h3>
+            <div class="language-list">
+              <div class="language-item">
+                <div>
+                  <b>Português</b>
+                  <span>Comunicação nativa.</span>
+                </div>
+                <span class="language-level">Nativo</span>
+              </div>
+              <div class="language-item">
+                <div>
+                  <b>Inglês</b>
+                  <span>Em desenvolvimento, com foco em leitura técnica e evolução contínua.</span>
+                </div>
+                <span class="language-level">Básico / estudo contínuo</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3>Métricas do perfil</h3>
+            <div class="metric-list">
+              <div class="metric-item">
+                <strong>Front-end + lógica</strong>
+                <span>Combino apresentação visual com base em lógica e estruturação de aplicações.</span>
+              </div>
+              <div class="metric-item">
+                <strong>Portfólio vivo</strong>
+                <span>Atualizo meus projetos com evolução constante, foco em publicação e posicionamento profissional.</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="recomendacoes">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><h2>Recomendações</h2></div>
+          <p>Espaço para colegas, recrutadores, professores ou parceiros deixarem uma recomendação pública sobre meu trabalho, postura ou potencial profissional.</p>
+        </div>
+
+        <div class="recommend-grid">
+          <article class="card reveal">
+            <h3>Deixe uma recomendação</h3>
+            <p>
+              Preencha os campos abaixo. A recomendação será enviada para análise e, após aprovação, exibida publicamente nesta seção do portfólio.
+            </p>
+
+            <form id="recommendationForm" style="margin-top: 18px; display: grid; gap: 12px;">
+              <div class="form-field">
+                <label class="field-label" for="recName">Seu nome</label>
+                <input id="recName" name="name" type="text" maxlength="60" placeholder="Ex.: João Silva" required />
+              </div>
+
+              <div class="form-field">
+                <label class="field-label" for="recAvatar">URL da sua foto de perfil</label>
+                <input id="recAvatar" name="avatar" type="url" maxlength="400" placeholder="https://..." />
+                <div class="field-help">Pode ser a foto do LinkedIn, GitHub ou outra imagem pública.</div>
+              </div>
+
+              <div class="form-field">
+                <label class="field-label" for="recText">Sua recomendação</label>
+                <textarea id="recText" name="text" rows="6" maxlength="800" placeholder="Escreva sua recomendação aqui..." required></textarea>
+              </div>
+
+              <button class="btn btn-primary" type="submit">Enviar recomendação</button>
+              <div id="formStatus" class="status-message"></div>
+            </form>
+
+            <div class="glass-note">
+              <strong style="color: var(--text);">Observação:</strong> por segurança, novas recomendações entram como pendentes e podem ser aprovadas no painel do Supabase antes de aparecer publicamente.
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3>O que já disseram</h3>
+            <p>As recomendações aprovadas aparecem aqui em ordem da mais recente para a mais antiga.</p>
+
+            <div class="tag-row">
+              <span class="chip">Público</span>
+              <span class="chip">Visível para recrutadores</span>
+              <span class="chip">Atualização automática</span>
+            </div>
+
+            <div id="recommendationsList" class="recommend-list">
+              <div class="recommendation-empty">Nenhuma recomendação publicada ainda. Seja a primeira pessoa a deixar um feedback profissional.</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><h2>Contato</h2></div>
+          <p>Se quiser conversar sobre estágio, projetos, trabalhos acadêmicos ou colaboração, estes são os canais principais para me encontrar.</p>
+        </div>
+
+        <div class="contact-grid">
+          <article class="card contact-box reveal">
+            <div class="contact-item">
+              <small>Email</small>
+              <a href="mailto:paulohenriquemelobezerra1@gmail.com">paulohenriquemelobezerra1@gmail.com</a>
+            </div>
+            <div class="contact-item">
+              <small>GitHub</small>
+              <a href="https://github.com/phmbezerra" target="_blank" rel="noreferrer">github.com/phmbezerra</a>
+            </div>
+            <div class="contact-item">
+              <small>LinkedIn</small>
+              <a href="https://www.linkedin.com/in/paulo-henrique-melo-bezerra-8b1b28372/" target="_blank" rel="noreferrer">linkedin.com/in/paulo-henrique-melo-bezerra-8b1b28372</a>
+            </div>
+            <div class="contact-item">
+              <small>Portfólio</small>
+              <a href="https://phmbezerra.github.io/portfolioHUB/" target="_blank" rel="noreferrer">phmbezerra.github.io/portfolioHUB/</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3>Pronto para oportunidades</h3>
+            <p>
+              Estou buscando minha primeira experiência profissional em tecnologia, especialmente em desenvolvimento web e áreas correlatas. Tenho disponibilidade para aprender rápido, colaborar com o time e crescer junto com projetos reais.
+            </p>
+            <div class="hero-actions" style="margin-top:18px;">
+              <a class="btn btn-primary" href="mailto:paulohenriquemelobezerra1@gmail.com">Enviar email</a>
+              <a class="btn btn-secondary" href="https://mail.google.com/mail/?view=cm&fs=1&to=paulohenriquemelobezerra1@gmail.com" target="_blank" rel="noreferrer">Abrir no Gmail</a>
+              <a class="btn btn-secondary" href="https://github.com/phmbezerra" target="_blank" rel="noreferrer">Abrir GitHub</a>
+              <a class="btn btn-secondary" href="https://www.linkedin.com/in/paulo-henrique-melo-bezerra-8b1b28372/" target="_blank" rel="noreferrer">Abrir LinkedIn</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-box">
+      <span>© 2026 Paulo Henrique de Melo Bezerra</span>
+      <span>Portfólio desenvolvido para apresentar trajetória, projetos e potencial profissional.</span>
+      <span><a href="https://www.linkedin.com/in/paulo-henrique-melo-bezerra-8b1b28372/" target="_blank" rel="noreferrer">LinkedIn ↗</a></span>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+
+    const SUPABASE_URL = 'https://tfeycufjmblzfwpelsxs.supabase.co';
+    const SUPABASE_ANON_KEY = 'sb_publishable_rtz2gjQp2xZ7HgL5si0TBQ_6GcAwBzK';
+    const DEFAULT_AVATAR = 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80';
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.14 });
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+    const form = document.getElementById('recommendationForm');
+    const list = document.getElementById('recommendationsList');
+    const status = document.getElementById('formStatus');
+    const approvedCount = document.getElementById('approvedCount');
+
+    let supabase = null;
+
+    function setStatus(message, type) {
+      status.textContent = message;
+      status.className = `status-message ${type}`;
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    function formatDate(dateString) {
+      try {
+        return new Date(dateString).toLocaleDateString('pt-BR', {
+          day: '2-digit',
+          month: 'long',
+          year: 'numeric'
+        });
+      } catch {
+        return 'Data indisponível';
+      }
+    }
+
+    function renderRecommendations(items) {
+      approvedCount.textContent = String(items?.length || 0);
+
+      if (!items || items.length === 0) {
+        list.innerHTML = '<div class="recommendation-empty">Nenhuma recomendação publicada ainda. Seja a primeira pessoa a deixar um feedback profissional.</div>';
+        return;
+      }
+
+      list.innerHTML = items.map(item => `
+        <article class="recommendation-card">
+          <div class="recommendation-top">
+            <img class="recommendation-avatar" src="${item.avatar_url || DEFAULT_AVATAR}" alt="Foto de ${escapeHtml(item.name)}" onerror="this.src='${DEFAULT_AVATAR}'">
+            <div>
+              <div class="recommendation-name">${escapeHtml(item.name)}</div>
+              <div class="recommendation-date">${formatDate(item.created_at)}</div>
+            </div>
+          </div>
+          <div class="recommendation-text">${escapeHtml(item.message)}</div>
+        </article>
+      `).join('');
+    }
+
+    async function loadRecommendations() {
+      if (!supabase) {
+        list.innerHTML = '<div class="recommendation-empty">Configure o Supabase no script para carregar recomendações públicas de verdade.</div>';
+        approvedCount.textContent = '0';
+        return;
+      }
+
+      const { data, error } = await supabase
+        .from('recommendations')
+        .select('id, name, avatar_url, message, created_at')
+        .eq('approved', true)
+        .order('created_at', { ascending: false });
+
+      if (error) {
+        list.innerHTML = '<div class="recommendation-empty">Não foi possível carregar as recomendações agora.</div>';
+        approvedCount.textContent = '0';
+        console.error(error);
+        return;
+      }
+
+      renderRecommendations(data);
+    }
+
+    function isSupabaseConfigured() {
+      return SUPABASE_URL && SUPABASE_ANON_KEY && !SUPABASE_URL.includes('COLE_AQUI') && !SUPABASE_ANON_KEY.includes('COLE_AQUI');
+    }
+
+    if (isSupabaseConfigured()) {
+      supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+      loadRecommendations();
+    } else {
+      loadRecommendations();
+    }
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const name = form.name.value.trim();
+      const avatar = form.avatar.value.trim();
+      const text = form.text.value.trim();
+
+      if (!name || !text) {
+        setStatus('Preencha pelo menos seu nome e a recomendação.', 'error');
+        return;
+      }
+
+      if (!supabase) {
+        setStatus('Falta configurar o Supabase para salvar recomendações públicas.', 'error');
+        return;
+      }
+
+      const { error } = await supabase
+        .from('recommendations')
+        .insert([
+          {
+            name,
+            avatar_url: avatar || null,
+            message: text,
+            approved: false
+          }
+        ]);
+
+      if (error) {
+        console.error(error);
+        setStatus('Não foi possível enviar a recomendação agora.', 'error');
+        return;
+      }
+
+      form.reset();
+      setStatus('Recomendação enviada com sucesso. Ela ficará visível após aprovação.', 'success');
+      await loadRecommendations();
+    });
+  </script>
+</body>
+</html>
