@@ -1,8 +1,8 @@
 <div align="center">
 
-# Paulo Henrique — Portfólio de Desenvolvimento
+# Paulo Henrique — Portfólio de Desenvolvimento de Software
 
-Portfólio profissional de um estudante de Ciência da Computação e desenvolvedor full stack em formação, com projetos em desenvolvimento web, automação, APIs, Java e persistência de dados.
+Portfólio pessoal e profissional que reúne projetos, competências, formação, certificações e formas de contato em uma experiência web responsiva.
 
 [![Portfólio](https://img.shields.io/badge/Portfólio-Acessar-59a8ff?style=for-the-badge&logo=google-chrome&logoColor=white)](https://phmbezerra.github.io/portfolioHUB/)
 [![GitHub](https://img.shields.io/badge/GitHub-phmbezerra-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/phmbezerra)
@@ -14,22 +14,15 @@ Portfólio profissional de um estudante de Ciência da Computação e desenvolve
 
 ## Sobre o projeto
 
-Este repositório reúne minha apresentação profissional, projetos, competências, certificado, currículo e formas de contato em uma única página responsiva.
+Este repositório centraliza minha trajetória em desenvolvimento de software e apresenta os projetos que melhor representam minha evolução técnica.
 
-O portfólio foi construído para demonstrar não apenas conhecimento técnico, mas também organização, documentação, preocupação com experiência do usuário e capacidade de transformar requisitos em entregas funcionais.
+A proposta do portfólio é mostrar como combino interface, lógica, automação, persistência de dados, documentação e organização para transformar ideias em entregas funcionais.
 
-## Perfil profissional
+## Sobre mim
 
-Sou estudante do **2º semestre de Ciência da Computação no CEUB**, em Brasília/DF, com foco em:
+Sou estudante de **Ciência da Computação no CEUB**, em Brasília/DF, e desenvolvedor de software em formação. Tenho interesse em aplicações web, automação, APIs, banco de dados e sistemas orientados a eventos.
 
-- desenvolvimento full stack;
-- automação de rotinas com Python;
-- interfaces responsivas com HTML, CSS, JavaScript e React;
-- APIs, autenticação e ferramentas internas;
-- Java, SQLite e sistemas orientados a eventos;
-- PHP e PostgreSQL em aprendizado contínuo.
-
-Busco minha primeira oportunidade de estágio em desenvolvimento, preferencialmente no período da manhã e em modelo híbrido em Brasília/DF.
+Aprendo principalmente por meio da prática: construo protótipos, testo soluções, investigo falhas, registro decisões e aprimoro os projetos conforme encontro novos desafios.
 
 ## Projetos em destaque
 
@@ -72,13 +65,13 @@ Aplicação em Python com operações de cadastro, consulta, atualização e rem
 ## Principais recursos
 
 - layout responsivo para computador, tablet e celular;
-- menu móvel acessível;
+- navegação móvel acessível;
 - SEO básico, Open Graph e dados estruturados;
-- apresentação objetiva de projetos e competências;
-- currículo para download;
+- apresentação organizada de projetos e competências;
+- currículo atualizado para download;
 - recomendações públicas integradas ao Supabase;
-- tratamento de falha no carregamento das imagens;
-- suporte a preferência de movimento reduzido;
+- fallback para falhas de imagens e serviços externos;
+- suporte à preferência de movimento reduzido;
 - links diretos para GitHub, LinkedIn e email.
 
 ## Estrutura esperada
@@ -98,16 +91,9 @@ portfolioHUB/
 
 ## Executando localmente
 
-Clone o repositório:
-
 ```bash
 git clone https://github.com/phmbezerra/portfolioHUB.git
 cd portfolioHUB
-```
-
-Abra o arquivo `index.html` no navegador ou execute um servidor local:
-
-```bash
 python -m http.server 8000
 ```
 
@@ -115,7 +101,7 @@ Depois, acesse `http://localhost:8000`.
 
 ## Recomendações com Supabase
 
-A seção de recomendações utiliza a tabela `recommendations` e espera os seguintes campos:
+A seção de recomendações utiliza a tabela `recommendations` com os campos:
 
 ```text
 id
@@ -126,18 +112,13 @@ approved
 created_at
 ```
 
-Novas recomendações são cadastradas com `approved = false` e só aparecem no portfólio após aprovação.
+Novas recomendações são registradas com `approved = false` e aparecem no site somente após aprovação.
 
-> A chave pública do Supabase pode existir no front-end, mas a segurança depende de políticas de **Row Level Security (RLS)** configuradas corretamente. O navegador deve conseguir inserir recomendações pendentes e consultar somente registros aprovados.
+> A chave pública do Supabase pode ser utilizada no front-end, mas a proteção dos dados depende de políticas de **Row Level Security (RLS)** configuradas corretamente.
 
 ## Publicação
 
-O projeto pode ser publicado gratuitamente com GitHub Pages:
-
-1. abra **Settings** no repositório;
-2. acesse **Pages**;
-3. selecione a branch principal e a pasta raiz;
-4. salve e aguarde a publicação.
+O projeto está preparado para publicação pelo GitHub Pages a partir da branch principal e da pasta raiz do repositório.
 
 ## Contato
 
