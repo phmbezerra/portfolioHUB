@@ -3,21 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Paulo Henrique | Portfólio de Desenvolvimento Web</title>
+  <title>Paulo Henrique | Desenvolvedor Full Stack em formação</title>
   <meta
     name="description"
-    content="Portfólio de Paulo Henrique de Melo Bezerra, estudante de Ciência da Computação com foco em desenvolvimento web, interfaces modernas, automação e projetos práticos."
+    content="Portfólio de Paulo Henrique de Melo Bezerra, estudante de Ciência da Computação e desenvolvedor full stack em formação, com projetos em React, Python, Java, SQLite e automação."
   />
   <meta name="theme-color" content="#07111f" />
-  <meta property="og:title" content="Paulo Henrique | Portfólio de Desenvolvimento Web" />
+  <meta property="og:title" content="Paulo Henrique | Desenvolvedor Full Stack em formação" />
   <meta
     property="og:description"
-    content="Projetos práticos com destaque para AccessVault, landing pages, automação em Python, sistemas com SQLite e portfólio profissional publicado."
+    content="Projetos práticos com destaque para AccessVault, EchoCraft, automações em Python, interfaces web e sistemas com persistência de dados."
   />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://phmbezerra.github.io/portfolioHUB/" />
   <meta property="og:image" content="https://phmbezerra.github.io/portfolioHUB/assets/img/foto-perfil.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="keywords" content="Paulo Henrique, desenvolvedor, estágio, Ciência da Computação, React, Python, PHP, Java, SQLite, Brasília" />
+  <meta name="author" content="Paulo Henrique de Melo Bezerra" />
+  <link rel="canonical" href="https://phmbezerra.github.io/portfolioHUB/" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -62,6 +65,27 @@
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; }
     button, input, textarea { font: inherit; }
+
+    :focus-visible {
+      outline: 3px solid rgba(103,232,249,0.72);
+      outline-offset: 4px;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 100;
+      transform: translateY(-160%);
+      padding: 12px 16px;
+      border-radius: 12px;
+      background: #ffffff;
+      color: #07111f;
+      font-weight: 800;
+      transition: transform .2s ease;
+    }
+
+    .skip-link:focus { transform: translateY(0); }
 
     .bg-grid {
       position: fixed;
@@ -141,9 +165,24 @@
       transition: .2s ease;
     }
 
-    .nav-links a:hover {
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
       color: var(--text);
       background: rgba(255,255,255,0.04);
+    }
+
+    .nav-toggle {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
     }
 
     .hero { padding: 76px 0 40px; }
@@ -330,6 +369,18 @@
       object-fit: cover;
     }
 
+    .profile-photo-wrap.image-missing::after {
+      content: "PHB";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      font-size: clamp(3rem, 8vw, 5rem);
+      font-weight: 900;
+      letter-spacing: -.06em;
+      color: rgba(255,255,255,.82);
+    }
+
     .profile-badge {
       position: absolute;
       left: 14px;
@@ -427,12 +478,12 @@
 
     .about-grid { grid-template-columns: 1.15fr .85fr; }
     .projects-grid { grid-template-columns: repeat(2, 1fr); }
+    .highlights-grid { grid-template-columns: repeat(3, 1fr); }
     .certificate-grid,
     .resume-grid,
     .contact-grid,
     .recommend-grid,
-    .skills-grid,
-    .highlights-grid { grid-template-columns: repeat(2, 1fr); }
+    .skills-grid { grid-template-columns: repeat(2, 1fr); }
 
     .card {
       padding: 24px;
@@ -685,6 +736,18 @@
       object-fit: cover;
     }
 
+    .certificate-preview.image-missing::before {
+      content: "Certificado Jornada Python";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 32px;
+      text-align: center;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
     .certificate-overlay {
       position: absolute;
       inset: 0;
@@ -766,6 +829,44 @@
 
     .skill-card h3 {
       margin-bottom: 16px;
+    }
+
+    .capability-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .capability-item {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .capability-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .capability-top b { font-size: .98rem; }
+
+    .capability-level {
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(103,232,249,.18);
+      color: #d6f8ff;
+      background: rgba(103,232,249,.07);
+      font-size: .8rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .capability-item p {
+      font-size: .93rem;
+      line-height: 1.65;
     }
 
     .skill-bars {
@@ -1006,8 +1107,32 @@
     }
 
     @media (max-width: 760px) {
-      .nav { padding: 14px 0; }
-      .nav-links { display: none; }
+      .nav {
+        padding: 14px 0;
+        position: relative;
+      }
+
+      .nav-toggle { display: inline-flex; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        right: 0;
+        padding: 12px;
+        border-radius: 18px;
+        background: rgba(7,17,31,.98);
+        border: 1px solid rgba(255,255,255,.1);
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.open {
+        display: grid;
+        gap: 4px;
+      }
+
+      .nav-links a { width: 100%; }
       .hero { padding-top: 28px; }
       .hero-main, .hero-side, .card { padding: 20px; }
       .hero-stats, .feature-metrics { grid-template-columns: 1fr; }
@@ -1020,9 +1145,45 @@
       .mini-item,
       .skill-row-top { grid-template-columns: 1fr; display: grid; }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+    }
   </style>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Paulo Henrique de Melo Bezerra",
+      "url": "https://phmbezerra.github.io/portfolioHUB/",
+      "image": "https://phmbezerra.github.io/portfolioHUB/assets/img/foto-perfil.jpg",
+      "jobTitle": "Desenvolvedor Full Stack em formação",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Brasília",
+        "addressRegion": "DF",
+        "addressCountry": "BR"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "CEUB"
+      },
+      "sameAs": [
+        "https://github.com/phmbezerra",
+        "https://www.linkedin.com/in/paulo-henrique-melo-bezerra-8b1b28372/"
+      ]
+    }
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
   <div class="bg-grid"></div>
   <div class="glow-blob"></div>
 
@@ -1033,7 +1194,9 @@
         <div>Paulo Henrique</div>
       </a>
 
-      <nav class="nav-links">
+      <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-controls="mainNav" aria-expanded="false">☰</button>
+
+      <nav class="nav-links" id="mainNav" aria-label="Navegação principal">
         <a href="#sobre">Sobre</a>
         <a href="#habilidades">Habilidades</a>
         <a href="#projetos">Projetos</a>
@@ -1045,42 +1208,44 @@
     </div>
   </header>
 
-  <main id="inicio">
+  <main id="conteudo">
+    <div id="inicio"></div>
     <section class="hero">
       <div class="container hero-grid">
         <div class="panel hero-main reveal">
-          <div class="eyebrow">💻 Estudante de Ciência da Computação • CEUB • Brasília/DF</div>
-          <h1><span class="gradient-text">Desenvolvedor web em formação</span><br>com foco em interfaces, sistemas e projetos reais.</h1>
+          <div class="eyebrow">💻 Ciência da Computação • 2º semestre • CEUB • Brasília/DF</div>
+          <h1><span class="gradient-text">Desenvolvedor Full Stack em formação</span><br>transformando ideias em sistemas funcionais.</h1>
           <p class="hero-subtitle">
-            Sou Paulo Henrique de Melo Bezerra. Estou construindo uma base profissional sólida em
-            desenvolvimento web com projetos práticos em <strong>HTML, CSS, JavaScript, Python, SQLite, React e GitHub</strong>,
-            transformando estudo em entrega visual, organização e solução real.
+            Sou Paulo Henrique de Melo Bezerra, estudante de Ciência da Computação. Desenvolvo projetos com
+            <strong>HTML, CSS, JavaScript, React, Python, Java, SQLite e Git/GitHub</strong>, além de estudar
+            <strong>PHP e desenvolvimento de APIs</strong> para ampliar minha atuação no back-end.
           </p>
 
           <div class="hero-highlight">
-            Busco oportunidades de estágio onde eu possa contribuir com <strong>front-end</strong>, <strong>modernização de interfaces</strong>,
-            <strong>integração com APIs</strong>, <strong>organização de projetos</strong> e evolução constante em ambientes de tecnologia.
+            Busco uma oportunidade de estágio em desenvolvimento onde eu possa contribuir com <strong>automação de rotinas</strong>,
+            <strong>manutenção de ferramentas internas</strong>, <strong>integração com APIs</strong>, <strong>correção de falhas</strong>
+            e documentação, evoluindo com orientação de uma equipe experiente.
           </div>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="#projetos">Ver projetos</a>
-            <a class="btn btn-secondary" href="https://github.com/phmbezerra" target="_blank" rel="noreferrer">GitHub</a>
-            <a class="btn btn-secondary" href="https://www.linkedin.com/in/paulo-henrique-melo-bezerra-8b1b28372/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="btn btn-secondary" href="https://github.com/phmbezerra" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="btn btn-secondary" href="https://www.linkedin.com/in/paulo-henrique-melo-bezerra-8b1b28372/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a class="btn btn-secondary" href="assets/docs/curriculo-paulo-henrique.pdf" download>Baixar currículo</a>
           </div>
 
           <div class="hero-stats">
             <div class="stat">
-              <strong>7 projetos</strong>
-              <span>Portfólio com landing pages, automações em Python, CRUD com SQLite e sistema full stack.</span>
+              <strong>8 projetos</strong>
+              <span>Projetos de front-end, automação, banco de dados, plugin em Java e aplicação full stack.</span>
             </div>
             <div class="stat">
               <strong>AccessVault</strong>
               <span>Projeto em destaque com autenticação, requests, auditoria e dashboard administrativo.</span>
             </div>
             <div class="stat">
-              <strong>Web + Dados</strong>
-              <span>Interesse em construir aplicações úteis, organizadas e prontas para uso real.</span>
+              <strong>Web + Automação</strong>
+              <span>Interesse em ferramentas internas, integrações, dados e melhoria de processos.</span>
             </div>
             <div class="stat">
               <strong id="approvedCount">0</strong>
@@ -1092,19 +1257,19 @@
         <aside class="panel hero-side reveal">
           <div class="profile-card">
             <div class="profile-photo-wrap">
-              <img src="assets/img/foto-perfil.jpg" alt="Foto de Paulo Henrique" />
-              <div class="profile-badge">Disponível para estágio em TI • Brasília/DF</div>
+              <img src="assets/img/foto-perfil.jpg" alt="Foto de Paulo Henrique" fetchpriority="high" onerror="this.style.display='none'; this.parentElement.classList.add('image-missing')" />
+              <div class="profile-badge">Disponível para estágio híbrido • Manhã • Brasília/DF</div>
             </div>
 
             <div class="mini-list">
-              <div class="mini-item"><span>Foco atual</span><b>Desenvolvimento Web / Front-end / Full Stack</b></div>
-              <div class="mini-item"><span>Stack principal</span><b>HTML, CSS, JavaScript, Python, React, SQLite</b></div>
-              <div class="mini-item"><span>Destaque</span><b>Portfólio público + GitHub ativo + projeto autoral</b></div>
+              <div class="mini-item"><span>Foco atual</span><b>Desenvolvimento Full Stack e automação</b></div>
+              <div class="mini-item"><span>Stack principal</span><b>HTML, CSS, JavaScript, React, Python, Java e SQLite</b></div>
+              <div class="mini-item"><span>Em evolução</span><b>PHP, APIs, PostgreSQL e arquitetura de aplicações</b></div>
             </div>
 
             <div class="social-inline">
-              <a class="social-link" href="https://github.com/phmbezerra" target="_blank" rel="noreferrer">GitHub ↗</a>
-              <a class="social-link" href="https://www.linkedin.com/in/paulo-henrique-melo-bezerra-8b1b28372/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+              <a class="social-link" href="https://github.com/phmbezerra" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+              <a class="social-link" href="https://www.linkedin.com/in/paulo-henrique-melo-bezerra-8b1b28372/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
             </div>
           </div>
 
@@ -1133,8 +1298,9 @@
           <article class="card reveal">
             <h3>Quem eu sou</h3>
             <p>
-              Sou estudante de Ciência da Computação com interesse em desenvolvimento web, automação, interfaces modernas e banco de dados.
-              Procuro evoluir unindo lógica, experiência do usuário e boa apresentação técnica, com projetos que demonstrem iniciativa real.
+              Sou estudante do 2º semestre de Ciência da Computação no CEUB. Tenho interesse em desenvolvimento full stack,
+              automação, manutenção de sistemas e banco de dados. Aprendo construindo: transformo requisitos em protótipos,
+              testo, investigo falhas e documento as decisões para tornar cada projeto mais claro e sustentável.
             </p>
             <div class="skills-wrap">
               <span class="chip">HTML</span>
@@ -1142,6 +1308,8 @@
               <span class="chip">JavaScript</span>
               <span class="chip">React</span>
               <span class="chip">Python</span>
+              <span class="chip">Java</span>
+              <span class="chip">PHP • em aprendizado</span>
               <span class="chip">SQLite</span>
               <span class="chip">Git & GitHub</span>
               <span class="chip">Responsividade</span>
@@ -1154,17 +1322,17 @@
               <div class="timeline-item">
                 <span>Formação</span>
                 <h4>Ciência da Computação — CEUB</h4>
-                <p>Graduação em andamento, com base em programação, lógica, banco de dados, arquitetura e desenvolvimento de software.</p>
+                <p>2º semestre em andamento, com base em programação, lógica, banco de dados, arquitetura de computadores e desenvolvimento de software.</p>
               </div>
               <div class="timeline-item">
                 <span>Prática</span>
                 <h4>Projetos próprios e portfólio publicado</h4>
-                <p>Construção de páginas web, automações, sistemas com persistência de dados e um portfólio profissional publicado no GitHub Pages.</p>
+                <p>Construção de interfaces web, automações, APIs, sistemas com persistência de dados e plugins em Java, publicados e documentados no GitHub.</p>
               </div>
               <div class="timeline-item">
                 <span>Direção</span>
                 <h4>Primeira oportunidade em tecnologia</h4>
-                <p>Atuar com desenvolvimento web e crescer em um time real, contribuindo com disciplina, aprendizado rápido e organização.</p>
+                <p>Atuar com desenvolvimento e automação em um time real, contribuindo com curiosidade técnica, organização, comunicação e aprendizado rápido.</p>
               </div>
             </div>
           </article>
@@ -1181,15 +1349,21 @@
 
         <div class="highlights-grid">
           <article class="card reveal">
-            <span class="label">Prática aplicada</span>
-            <h3>Aprendizado transformado em entrega</h3>
-            <p>Em vez de ficar só na teoria, eu construo projetos com interface, lógica e documentação para mostrar evolução técnica de forma concreta.</p>
+            <span class="label">Automação</span>
+            <h3>Rotinas repetitivas viram ferramentas</h3>
+            <p>Uso Python e lógica de programação para organizar dados, arquivos e processos, sempre buscando reduzir trabalho manual e erros.</p>
           </article>
 
           <article class="card reveal">
-            <span class="label">Apresentação profissional</span>
-            <h3>Portfólio pronto para recrutadores</h3>
-            <p>Centralizo currículo, projetos, certificações, links profissionais e recomendações em um ambiente visualmente organizado e público.</p>
+            <span class="label">Manutenção e diagnóstico</span>
+            <h3>Investigo, testo e corrijo</h3>
+            <p>Tenho prática em depuração, persistência de dados e correção incremental de falhas em projetos web e sistemas orientados a eventos.</p>
+          </article>
+
+          <article class="card reveal">
+            <span class="label">Organização</span>
+            <h3>Código acompanhado de contexto</h3>
+            <p>Valorizo Git, documentação, estrutura de pastas e explicações claras para facilitar manutenção, colaboração e evolução do projeto.</p>
           </article>
         </div>
       </div>
@@ -1205,34 +1379,26 @@
         <div class="skills-grid">
           <article class="card skill-card reveal">
             <h3>Competências técnicas</h3>
-            <div class="skill-bars">
-              <div class="skill-row">
-                <div class="skill-row-top"><span>HTML</span><span>90%</span></div>
-                <div class="skill-track"><div class="skill-fill" style="width: 90%"></div></div>
+            <div class="capability-list">
+              <div class="capability-item">
+                <div class="capability-top"><b>Front-end</b><span class="capability-level">Uso em projetos</span></div>
+                <p>HTML semântico, CSS responsivo, JavaScript, React e construção de interfaces com foco em clareza e usabilidade.</p>
               </div>
-              <div class="skill-row">
-                <div class="skill-row-top"><span>CSS</span><span>86%</span></div>
-                <div class="skill-track"><div class="skill-fill" style="width: 86%"></div></div>
+              <div class="capability-item">
+                <div class="capability-top"><b>Back-end e automação</b><span class="capability-level">Base prática</span></div>
+                <p>Python, FastAPI, consumo e criação de APIs, scripts de automação e PHP em aprendizado para ferramentas web.</p>
               </div>
-              <div class="skill-row">
-                <div class="skill-row-top"><span>JavaScript</span><span>77%</span></div>
-                <div class="skill-track"><div class="skill-fill" style="width: 77%"></div></div>
+              <div class="capability-item">
+                <div class="capability-top"><b>Dados e persistência</b><span class="capability-level">Uso em projetos</span></div>
+                <p>SQLite, CRUD, modelagem relacional, Supabase/PostgreSQL e integração de dados com aplicações.</p>
               </div>
-              <div class="skill-row">
-                <div class="skill-row-top"><span>React</span><span>65%</span></div>
-                <div class="skill-track"><div class="skill-fill" style="width: 65%"></div></div>
+              <div class="capability-item">
+                <div class="capability-top"><b>Java e sistemas orientados a eventos</b><span class="capability-level">Projeto autoral</span></div>
+                <p>Desenvolvimento de plugin com eventos, persistência em SQLite, reconstrução de estados e tratamento de casos especiais.</p>
               </div>
-              <div class="skill-row">
-                <div class="skill-row-top"><span>Python</span><span>79%</span></div>
-                <div class="skill-track"><div class="skill-fill" style="width: 79%"></div></div>
-              </div>
-              <div class="skill-row">
-                <div class="skill-row-top"><span>SQLite / CRUD</span><span>74%</span></div>
-                <div class="skill-track"><div class="skill-fill" style="width: 74%"></div></div>
-              </div>
-              <div class="skill-row">
-                <div class="skill-row-top"><span>Git e GitHub</span><span>76%</span></div>
-                <div class="skill-track"><div class="skill-fill" style="width: 76%"></div></div>
+              <div class="capability-item">
+                <div class="capability-top"><b>Ferramentas de trabalho</b><span class="capability-level">Uso contínuo</span></div>
+                <p>Git, GitHub, depuração, organização de repositórios, documentação técnica e publicação no GitHub Pages.</p>
               </div>
             </div>
           </article>
@@ -1244,28 +1410,28 @@
                 <div class="dot"></div>
                 <div>
                   <b>Aprendizado rápido</b>
-                  <span>Consigo absorver novos conteúdos, testar, corrigir e evoluir com consistência.</span>
+                  <span>Aprendo novos recursos testando, comparando resultados e incorporando feedback ao projeto.</span>
                 </div>
               </div>
               <div class="achievement-item">
                 <div class="dot"></div>
                 <div>
                   <b>Organização</b>
-                  <span>Busco estruturar bem meus projetos, arquivos, descrições e entregas, tanto no visual quanto na lógica.</span>
+                  <span>Estruturo arquivos, tarefas, commits e documentação para deixar a evolução do projeto fácil de acompanhar.</span>
                 </div>
               </div>
               <div class="achievement-item">
                 <div class="dot"></div>
                 <div>
-                  <b>Capricho na apresentação</b>
-                  <span>Dou atenção à clareza da interface, navegação, espaçamento e legibilidade do que construo.</span>
+                  <b>Comunicação clara</b>
+                  <span>Procuro explicar decisões, registrar problemas e apresentar soluções de maneira objetiva.</span>
                 </div>
               </div>
               <div class="achievement-item">
                 <div class="dot"></div>
                 <div>
                   <b>Comprometimento</b>
-                  <span>Tenho foco em concluir projetos, aprender continuamente e transformar orientação em melhoria prática.</span>
+                  <span>Assumo responsabilidade pelas entregas e persisto na investigação até encontrar uma solução funcional.</span>
                 </div>
               </div>
             </div>
@@ -1308,7 +1474,7 @@
                 </div>
 
                 <div class="project-actions" style="margin-top: 18px;">
-                  <a class="tiny-btn primary" href="https://github.com/phmbezerra" target="_blank" rel="noreferrer">Ver GitHub</a>
+                  <a class="tiny-btn primary" href="https://github.com/phmbezerra" target="_blank" rel="noopener noreferrer">Ver GitHub</a>
                   <a class="tiny-btn" href="#contato">Falar sobre este projeto</a>
                 </div>
               </div>
@@ -1343,6 +1509,34 @@
           </article>
 
           <article class="card project-card reveal">
+            <div class="project-cover" data-label="Java + SQLite">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+                <path d="M4 7l8-4 8 4-8 4-8-4z"></path>
+                <path d="M4 7v10l8 4 8-4V7"></path>
+                <path d="M12 11v10"></path>
+                <path d="M8 13l-2 1"></path>
+                <path d="M16 13l2 1"></path>
+              </svg>
+            </div>
+            <h3>EchoCraft — Reconstrução persistente</h3>
+            <p>Plugin em Java para Minecraft que registra blocos destruídos, preserva o estado em SQLite e reconstrói estruturas com feedback visual.</p>
+            <div class="project-points">
+              <div class="point">Trabalha com eventos, persistência após reinício e recuperação controlada de blocos destruídos por explosões.</div>
+              <div class="point">Inclui tratamento de portas e escadas, hologramas, contornos e efeitos de rastro para melhorar a experiência visual.</div>
+            </div>
+            <div class="skills-wrap">
+              <span class="chip">Java</span>
+              <span class="chip">SQLite</span>
+              <span class="chip">Eventos</span>
+              <span class="chip">Persistência</span>
+              <span class="chip">Depuração</span>
+            </div>
+            <div class="project-actions">
+              <a class="tiny-btn primary" href="https://github.com/phmbezerra" target="_blank" rel="noopener noreferrer">Ver perfil no GitHub</a>
+            </div>
+          </article>
+
+          <article class="card project-card reveal">
             <div class="project-cover" data-label="Projeto Web">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
                 <rect x="3" y="5" width="18" height="14" rx="2"></rect>
@@ -1364,7 +1558,7 @@
               <span class="chip">Responsividade</span>
             </div>
             <div class="project-actions">
-              <a class="tiny-btn primary" href="https://github.com/phmbezerra/taskflow-landing-page" target="_blank" rel="noreferrer">Ver código</a>
+              <a class="tiny-btn primary" href="https://github.com/phmbezerra/taskflow-landing-page" target="_blank" rel="noopener noreferrer">Ver código</a>
             </div>
           </article>
 
@@ -1394,7 +1588,7 @@
               <span class="chip">Organização</span>
             </div>
             <div class="project-actions">
-              <a class="tiny-btn primary" href="https://github.com/phmbezerra/organizador-de-arquivos" target="_blank" rel="noreferrer">Ver código</a>
+              <a class="tiny-btn primary" href="https://github.com/phmbezerra/organizador-de-arquivos" target="_blank" rel="noopener noreferrer">Ver código</a>
             </div>
           </article>
 
@@ -1418,7 +1612,7 @@
               <span class="chip">CRUD</span>
             </div>
             <div class="project-actions">
-              <a class="tiny-btn primary" href="https://github.com/phmbezerra/sistema-estoque-python" target="_blank" rel="noreferrer">Ver código</a>
+              <a class="tiny-btn primary" href="https://github.com/phmbezerra/sistema-estoque-python" target="_blank" rel="noopener noreferrer">Ver código</a>
             </div>
           </article>
 
@@ -1443,7 +1637,7 @@
               <span class="chip">Local Storage</span>
             </div>
             <div class="project-actions">
-              <a class="tiny-btn primary" href="https://github.com/phmbezerra/to-do-list-js" target="_blank" rel="noreferrer">Ver código</a>
+              <a class="tiny-btn primary" href="https://github.com/phmbezerra/to-do-list-js" target="_blank" rel="noopener noreferrer">Ver código</a>
             </div>
           </article>
 
@@ -1468,7 +1662,7 @@
               <span class="chip">JavaScript</span>
             </div>
             <div class="project-actions">
-              <a class="tiny-btn primary" href="https://github.com/phmbezerra/calculadora-web" target="_blank" rel="noreferrer">Ver código</a>
+              <a class="tiny-btn primary" href="https://github.com/phmbezerra/calculadora-web" target="_blank" rel="noopener noreferrer">Ver código</a>
             </div>
           </article>
 
@@ -1494,8 +1688,8 @@
               <span class="chip">SEO básico</span>
             </div>
             <div class="project-actions">
-              <a class="tiny-btn primary" href="https://github.com/phmbezerra/portfolioHUB" target="_blank" rel="noreferrer">Ver código</a>
-              <a class="tiny-btn" href="https://phmbezerra.github.io/portfolioHUB/" target="_blank" rel="noreferrer">Ver site</a>
+              <a class="tiny-btn primary" href="https://github.com/phmbezerra/portfolioHUB" target="_blank" rel="noopener noreferrer">Ver código</a>
+              <a class="tiny-btn" href="https://phmbezerra.github.io/portfolioHUB/" target="_blank" rel="noopener noreferrer">Ver site</a>
             </div>
           </article>
         </div>
@@ -1535,10 +1729,10 @@
 
           <article class="card reveal">
             <div class="certificate-preview">
-              <img src="assets/img/certificado-python.jpg" alt="Certificado Jornada Python" />
+              <img src="assets/img/certificado-python.jpg" alt="Certificado Jornada Python" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('image-missing')" />
               <div class="certificate-overlay">
                 <strong>Certificado em destaque</strong>
-                <span style="color: var(--muted);">Mantenha o arquivo visível e em boa resolução para valorizar a apresentação profissional.</span>
+                <span style="color: var(--muted);">Formação complementar alinhada aos projetos de automação e desenvolvimento presentes no portfólio.</span>
               </div>
             </div>
           </article>
@@ -1564,21 +1758,21 @@
                 <div class="dot"></div>
                 <div>
                   <b>Formação acadêmica</b>
-                  <span>Ciência da Computação — CEUB • 1º semestre • Brasília/DF</span>
+                  <span>Ciência da Computação — CEUB • 2º semestre • Brasília/DF</span>
                 </div>
               </div>
               <div class="resume-item">
                 <div class="dot"></div>
                 <div>
                   <b>Áreas de interesse</b>
-                  <span>Frontend, backend, automação, lógica aplicada, UX básica e persistência de dados.</span>
+                  <span>Desenvolvimento full stack, automação, APIs, manutenção de sistemas e persistência de dados.</span>
                 </div>
               </div>
               <div class="resume-item">
                 <div class="dot"></div>
                 <div>
                   <b>Objetivo</b>
-                  <span>Conquistar uma oportunidade de estágio para crescer tecnicamente e contribuir com projetos reais.</span>
+                  <span>Contribuir em uma equipe de desenvolvimento, aprendendo com projetos reais e entregando melhorias com responsabilidade.</span>
                 </div>
               </div>
             </div>
@@ -1605,7 +1799,7 @@
                 <div class="dot"></div>
                 <div>
                   <b>Projeto full stack em destaque</b>
-                  <span>O AccessVault amplia o nível do portfólio por mostrar visão de sistema e não apenas páginas isoladas.</span>
+                  <span>AccessVault e EchoCraft demonstram visão de sistema, persistência, depuração e evolução incremental além de páginas isoladas.</span>
                 </div>
               </div>
             </div>
@@ -1637,8 +1831,8 @@
             <h3>Métricas do perfil</h3>
             <div class="metric-list">
               <div class="metric-item">
-                <strong>Front-end + lógica</strong>
-                <span>Combino apresentação visual com base em lógica e estruturação de aplicações.</span>
+                <strong>Full stack em evolução</strong>
+                <span>Combino interface, lógica, APIs e persistência de dados em projetos progressivamente mais completos.</span>
               </div>
               <div class="metric-item">
                 <strong>Portfólio vivo</strong>
@@ -1682,7 +1876,7 @@
               </div>
 
               <button class="btn btn-primary" type="submit">Enviar recomendação</button>
-              <div id="formStatus" class="status-message"></div>
+              <div id="formStatus" class="status-message" role="status" aria-live="polite"></div>
             </form>
 
             <div class="glass-note">
@@ -1723,28 +1917,28 @@
             </div>
             <div class="contact-item">
               <small>GitHub</small>
-              <a href="https://github.com/phmbezerra" target="_blank" rel="noreferrer">github.com/phmbezerra</a>
+              <a href="https://github.com/phmbezerra" target="_blank" rel="noopener noreferrer">github.com/phmbezerra</a>
             </div>
             <div class="contact-item">
               <small>LinkedIn</small>
-              <a href="https://www.linkedin.com/in/paulo-henrique-melo-bezerra-8b1b28372/" target="_blank" rel="noreferrer">linkedin.com/in/paulo-henrique-melo-bezerra-8b1b28372</a>
+              <a href="https://www.linkedin.com/in/paulo-henrique-melo-bezerra-8b1b28372/" target="_blank" rel="noopener noreferrer">linkedin.com/in/paulo-henrique-melo-bezerra-8b1b28372</a>
             </div>
             <div class="contact-item">
               <small>Portfólio</small>
-              <a href="https://phmbezerra.github.io/portfolioHUB/" target="_blank" rel="noreferrer">phmbezerra.github.io/portfolioHUB/</a>
+              <a href="https://phmbezerra.github.io/portfolioHUB/" target="_blank" rel="noopener noreferrer">phmbezerra.github.io/portfolioHUB/</a>
             </div>
           </article>
 
           <article class="card reveal">
             <h3>Pronto para oportunidades</h3>
             <p>
-              Estou buscando minha primeira experiência profissional em tecnologia, especialmente em desenvolvimento web e áreas correlatas. Tenho disponibilidade para aprender rápido, colaborar com o time e crescer junto com projetos reais.
+              Estou buscando minha primeira experiência profissional em desenvolvimento. Tenho disponibilidade para estágio no período da manhã, modelo híbrido em Brasília/DF, e interesse em atuar com automação, ferramentas internas, manutenção de sistemas e novas funcionalidades.
             </p>
             <div class="hero-actions" style="margin-top:18px;">
               <a class="btn btn-primary" href="mailto:paulohenriquemelobezerra1@gmail.com">Enviar email</a>
-              <a class="btn btn-secondary" href="https://mail.google.com/mail/?view=cm&fs=1&to=paulohenriquemelobezerra1@gmail.com" target="_blank" rel="noreferrer">Abrir no Gmail</a>
-              <a class="btn btn-secondary" href="https://github.com/phmbezerra" target="_blank" rel="noreferrer">Abrir GitHub</a>
-              <a class="btn btn-secondary" href="https://www.linkedin.com/in/paulo-henrique-melo-bezerra-8b1b28372/" target="_blank" rel="noreferrer">Abrir LinkedIn</a>
+              <a class="btn btn-secondary" href="https://mail.google.com/mail/?view=cm&fs=1&to=paulohenriquemelobezerra1@gmail.com" target="_blank" rel="noopener noreferrer">Abrir no Gmail</a>
+              <a class="btn btn-secondary" href="https://github.com/phmbezerra" target="_blank" rel="noopener noreferrer">Abrir GitHub</a>
+              <a class="btn btn-secondary" href="https://www.linkedin.com/in/paulo-henrique-melo-bezerra-8b1b28372/" target="_blank" rel="noopener noreferrer">Abrir LinkedIn</a>
             </div>
           </article>
         </div>
@@ -1755,14 +1949,12 @@
   <footer>
     <div class="container footer-box">
       <span>© 2026 Paulo Henrique de Melo Bezerra</span>
-      <span>Portfólio desenvolvido para apresentar trajetória, projetos e potencial profissional.</span>
-      <span><a href="https://www.linkedin.com/in/paulo-henrique-melo-bezerra-8b1b28372/" target="_blank" rel="noreferrer">LinkedIn ↗</a></span>
+      <span>Desenvolvimento full stack em formação • Projetos, automação e aprendizado contínuo.</span>
+      <span><a href="https://www.linkedin.com/in/paulo-henrique-melo-bezerra-8b1b28372/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></span>
     </div>
   </footer>
 
   <script type="module">
-    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
-
     const SUPABASE_URL = 'https://tfeycufjmblzfwpelsxs.supabase.co';
     const SUPABASE_ANON_KEY = 'sb_publishable_rtz2gjQp2xZ7HgL5si0TBQ_6GcAwBzK';
     const DEFAULT_AVATAR = 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80';
@@ -1776,6 +1968,27 @@
     }, { threshold: 0.14 });
 
     document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+    const navToggle = document.querySelector('.nav-toggle');
+    const mainNav = document.getElementById('mainNav');
+
+    navToggle?.addEventListener('click', () => {
+      const isOpen = mainNav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+      navToggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+      navToggle.textContent = isOpen ? '×' : '☰';
+    });
+
+    mainNav?.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('open');
+        navToggle?.setAttribute('aria-expanded', 'false');
+        if (navToggle) {
+          navToggle.setAttribute('aria-label', 'Abrir menu');
+          navToggle.textContent = '☰';
+        }
+      });
+    });
 
     const form = document.getElementById('recommendationForm');
     const list = document.getElementById('recommendationsList');
@@ -1796,14 +2009,24 @@
     }
 
     function formatDate(dateString) {
+      const date = new Date(dateString);
+      if (Number.isNaN(date.getTime())) return 'Data indisponível';
+
+      return date.toLocaleDateString('pt-BR', {
+        day: '2-digit',
+        month: 'long',
+        year: 'numeric'
+      });
+    }
+
+    function safeImageUrl(value) {
+      if (!value) return DEFAULT_AVATAR;
+
       try {
-        return new Date(dateString).toLocaleDateString('pt-BR', {
-          day: '2-digit',
-          month: 'long',
-          year: 'numeric'
-        });
+        const url = new URL(value);
+        return ['http:', 'https:'].includes(url.protocol) ? url.href : DEFAULT_AVATAR;
       } catch {
-        return 'Data indisponível';
+        return DEFAULT_AVATAR;
       }
     }
 
@@ -1818,7 +2041,7 @@
       list.innerHTML = items.map(item => `
         <article class="recommendation-card">
           <div class="recommendation-top">
-            <img class="recommendation-avatar" src="${item.avatar_url || DEFAULT_AVATAR}" alt="Foto de ${escapeHtml(item.name)}" onerror="this.src='${DEFAULT_AVATAR}'">
+            <img class="recommendation-avatar" src="${safeImageUrl(item.avatar_url)}" alt="Foto de ${escapeHtml(item.name)}" loading="lazy" onerror="this.src='${DEFAULT_AVATAR}'">
             <div>
               <div class="recommendation-name">${escapeHtml(item.name)}</div>
               <div class="recommendation-date">${formatDate(item.created_at)}</div>
@@ -1856,12 +2079,23 @@
       return SUPABASE_URL && SUPABASE_ANON_KEY && !SUPABASE_URL.includes('COLE_AQUI') && !SUPABASE_ANON_KEY.includes('COLE_AQUI');
     }
 
-    if (isSupabaseConfigured()) {
-      supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-      loadRecommendations();
-    } else {
-      loadRecommendations();
+    async function initializeRecommendations() {
+      if (!isSupabaseConfigured()) {
+        await loadRecommendations();
+        return;
+      }
+
+      try {
+        const { createClient } = await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm');
+        supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+      } catch (error) {
+        console.error('Falha ao carregar o cliente do Supabase:', error);
+      }
+
+      await loadRecommendations();
     }
+
+    initializeRecommendations();
 
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
@@ -1880,26 +2114,34 @@
         return;
       }
 
-      const { error } = await supabase
-        .from('recommendations')
-        .insert([
-          {
-            name,
-            avatar_url: avatar || null,
-            message: text,
-            approved: false
-          }
-        ]);
+      const submitButton = form.querySelector('button[type="submit"]');
+      submitButton.disabled = true;
+      submitButton.textContent = 'Enviando...';
 
-      if (error) {
+      try {
+        const { error } = await supabase
+          .from('recommendations')
+          .insert([
+            {
+              name,
+              avatar_url: avatar || null,
+              message: text,
+              approved: false
+            }
+          ]);
+
+        if (error) throw error;
+
+        form.reset();
+        setStatus('Recomendação enviada com sucesso. Ela ficará visível após aprovação.', 'success');
+        await loadRecommendations();
+      } catch (error) {
         console.error(error);
         setStatus('Não foi possível enviar a recomendação agora.', 'error');
-        return;
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Enviar recomendação';
       }
-
-      form.reset();
-      setStatus('Recomendação enviada com sucesso. Ela ficará visível após aprovação.', 'success');
-      await loadRecommendations();
     });
   </script>
 </body>
