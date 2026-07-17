@@ -2,7 +2,7 @@
 
 # Paulo Henrique — Portfólio de Desenvolvimento de Software
 
-Portfólio pessoal e profissional que reúne projetos, competências, formação, certificações e formas de contato em uma experiência web responsiva.
+Portfólio pessoal e profissional com projetos de desenvolvimento full stack, integração entre sistemas, automação, banco de dados e interfaces responsivas.
 
 [![Portfólio](https://img.shields.io/badge/Portfólio-Acessar-59a8ff?style=for-the-badge&logo=google-chrome&logoColor=white)](https://phmbezerra.github.io/portfolioHUB/)
 [![GitHub](https://img.shields.io/badge/GitHub-phmbezerra-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/phmbezerra)
@@ -14,29 +14,36 @@ Portfólio pessoal e profissional que reúne projetos, competências, formação
 
 ## Sobre o projeto
 
-Este repositório centraliza minha trajetória em desenvolvimento de software e apresenta os projetos que melhor representam minha evolução técnica.
+Este repositório apresenta minha trajetória em desenvolvimento de software e reúne os trabalhos que melhor representam minha evolução técnica.
 
-A proposta do portfólio é mostrar como combino interface, lógica, automação, persistência de dados, documentação e organização para transformar ideias em entregas funcionais.
+O portfólio destaca projetos que conectam interface, back-end, APIs, persistência, automação e documentação. O principal caso apresentado atualmente é o ecossistema **EchoCraft + EchoPanel**, formado por duas aplicações independentes que se comunicam por uma API autenticada.
 
 ## Sobre mim
 
-Sou estudante de **Ciência da Computação no CEUB**, em Brasília/DF, e desenvolvedor de software em formação. Tenho interesse em aplicações web, automação, APIs, banco de dados e sistemas orientados a eventos.
+Sou estudante de **Ciência da Computação no CEUB**, em Brasília/DF, e desenvolvedor de software em formação.
 
-Aprendo principalmente por meio da prática: construo protótipos, testo soluções, investigo falhas, registro decisões e aprimoro os projetos conforme encontro novos desafios.
+Tenho interesse em desenvolvimento full stack, integrações entre sistemas, automação, APIs e banco de dados. Aprendo principalmente por meio da prática: construo protótipos, testo soluções, investigo falhas, registro decisões e aprimoro os projetos conforme encontro novos desafios.
 
 ## Projetos em destaque
+
+### EchoCraft + EchoPanel
+
+Ecossistema de memória temporal para servidores Minecraft.
+
+O **EchoCraft** é um plugin Paper em Java que registra versões de estruturas, rastros e ações de jogadores, persiste os dados em SQLite e restaura memórias temporais.
+
+O **EchoPanel** é um painel Laravel com Livewire que monitora servidores, exibe atividades e linhas do tempo visuais e envia comandos remotos de restauração ao plugin.
+
+**Tecnologias e conceitos:** Java, Paper API, Laravel, Livewire, PHP, REST API, SQLite, Gradle, autenticação por token, heartbeat e fila de comandos.
+
+- [Repositório do EchoCraft](https://github.com/phmbezerra/EchoCraft)
+- [Repositório do EchoPanel](https://github.com/phmbezerra/EchoPanel)
 
 ### AccessVault
 
 Plataforma de gestão de acessos com autenticação, níveis de permissão, solicitações, aprovação, geração de acessos e trilha de auditoria.
 
 **Tecnologias e conceitos:** React, FastAPI, JWT, SQLite, controle de acesso, auditoria e dashboard administrativo.
-
-### EchoCraft
-
-Plugin em Java para Minecraft que registra blocos destruídos, persiste o estado em SQLite e reconstrói estruturas com efeitos visuais.
-
-**Tecnologias e conceitos:** Java, SQLite, eventos, persistência, depuração e tratamento de blocos especiais.
 
 ### Organizador de Arquivos
 
@@ -57,6 +64,11 @@ Aplicação em Python com operações de cadastro, consulta, atualização e rem
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
+![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=flat-square&logo=laravel&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)
 ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white)
 ![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-121013?style=flat-square&logo=github&logoColor=white)
 
@@ -68,11 +80,12 @@ Aplicação em Python com operações de cadastro, consulta, atualização e rem
 - navegação móvel acessível;
 - SEO básico, Open Graph e dados estruturados;
 - apresentação organizada de projetos e competências;
+- destaque para integração entre Java e Laravel;
 - currículo atualizado para download;
 - recomendações públicas integradas ao Supabase;
 - fallback para falhas de imagens e serviços externos;
 - suporte à preferência de movimento reduzido;
-- links diretos para GitHub, LinkedIn e email.
+- links diretos para projetos, GitHub, LinkedIn e email.
 
 ## Estrutura esperada
 
