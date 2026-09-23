@@ -3,2154 +3,389 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Paulo Henrique | Portfólio de Desenvolvimento de Software</title>
-  <meta
-    name="description"
-    content="Portfólio de Paulo Henrique de Melo Bezerra, estudante de Ciência da Computação, com projetos full stack em Java, Laravel, APIs REST, automação e banco de dados."
-  />
+  <title>Paulo Henrique | Software Developer</title>
+  <meta name="description" content="Portfólio de Paulo Henrique de Melo Bezerra: integração entre sistemas, aplicações full stack, projetos em Java, Laravel, React, FastAPI e pesquisa computacional." />
   <meta name="theme-color" content="#07111f" />
-  <meta property="og:title" content="Paulo Henrique | Portfólio de Desenvolvimento de Software" />
-  <meta
-    property="og:description"
-    content="Projetos autorais com destaque para o ecossistema EchoCraft e EchoPanel, AccessVault, APIs, automações e sistemas com persistência de dados."
-  />
+  <meta name="author" content="Paulo Henrique de Melo Bezerra" />
+  <meta name="keywords" content="Paulo Henrique, software developer, full stack, Java, Laravel, React, FastAPI, Ciência da Computação, APIs REST, Brasília" />
+  <link rel="canonical" href="https://phmbezerra.github.io/portfolioHUB/" />
+
   <meta property="og:type" content="website" />
+  <meta property="og:title" content="Paulo Henrique | Software Developer" />
+  <meta property="og:description" content="Sistemas full stack, integrações, Java, Laravel, React e pesquisa computacional." />
   <meta property="og:url" content="https://phmbezerra.github.io/portfolioHUB/" />
   <meta property="og:image" content="https://phmbezerra.github.io/portfolioHUB/assets/img/foto-perfil.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="keywords" content="Paulo Henrique, desenvolvimento de software, Ciência da Computação, Java, Laravel, PHP, Livewire, APIs REST, SQLite, Minecraft, Brasília" />
-  <meta name="author" content="Paulo Henrique de Melo Bezerra" />
-  <link rel="canonical" href="https://phmbezerra.github.io/portfolioHUB/" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #07111f;
-      --bg-soft: #0c1a2b;
-      --bg-soft-2: #10233d;
-      --card: rgba(13, 26, 43, 0.78);
-      --card-strong: rgba(10, 20, 34, 0.95);
-      --line: rgba(255,255,255,0.09);
-      --line-strong: rgba(255,255,255,0.16);
-      --text: #e8eefb;
-      --muted: #9fb2cc;
-      --primary: #59a8ff;
-      --primary-2: #7c5cff;
-      --accent: #67e8f9;
-      --success: #86efac;
-      --warning: #facc15;
-      --danger: #f87171;
-      --shadow: 0 18px 60px rgba(0,0,0,0.32);
-      --shadow-soft: 0 10px 30px rgba(0,0,0,0.18);
-      --radius-xl: 28px;
-      --radius-lg: 20px;
-      --radius-md: 14px;
-      --max: 1180px;
-    }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(124,92,255,0.18), transparent 28%),
-        radial-gradient(circle at top right, rgba(89,168,255,0.16), transparent 24%),
-        linear-gradient(180deg, #07111f 0%, #081424 100%);
-      color: var(--text);
-      min-height: 100vh;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    button, input, textarea { font: inherit; }
-
-    :focus-visible {
-      outline: 3px solid rgba(103,232,249,0.72);
-      outline-offset: 4px;
-    }
-
-    .skip-link {
-      position: fixed;
-      top: 12px;
-      left: 12px;
-      z-index: 100;
-      transform: translateY(-160%);
-      padding: 12px 16px;
-      border-radius: 12px;
-      background: #ffffff;
-      color: #07111f;
-      font-weight: 800;
-      transition: transform .2s ease;
-    }
-
-    .skip-link:focus { transform: translateY(0); }
-
-    .bg-grid {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 34px 34px;
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent 95%);
-      opacity: .35;
-    }
-
-    .glow-blob {
-      position: fixed;
-      inset: auto auto 10% -120px;
-      width: 340px;
-      height: 340px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(103,232,249,.10), transparent 65%);
-      pointer-events: none;
-      filter: blur(12px);
-    }
-
-    .container {
-      width: min(calc(100% - 32px), var(--max));
-      margin: 0 auto;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(16px);
-      background: rgba(6,12,22,0.62);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      min-height: 76px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      font-weight: 800;
-      letter-spacing: .02em;
-    }
-
-    .brand-badge {
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, var(--primary), var(--primary-2));
-      box-shadow: 0 10px 30px rgba(89,168,255,0.28);
-      font-size: 14px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .nav-links a {
-      padding: 10px 12px;
-      border-radius: 12px;
-      transition: .2s ease;
-    }
-
-    .nav-links a:hover,
-    .nav-links a:focus-visible {
-      color: var(--text);
-      background: rgba(255,255,255,0.04);
-    }
-
-    .nav-toggle {
-      display: none;
-      width: 46px;
-      height: 46px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.1);
-      background: rgba(255,255,255,0.04);
-      color: var(--text);
-      cursor: pointer;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.35rem;
-    }
-
-    .hero { padding: 76px 0 40px; }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.18fr .82fr;
-      gap: 28px;
-      align-items: stretch;
-    }
-
-    .panel, .card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow);
-    }
-
-    .hero-main {
-      padding: 36px;
-      position: relative;
-      overflow: hidden;
-      isolation: isolate;
-    }
-
-    .hero-main::before {
-      content: "";
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      right: -90px;
-      top: -90px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(89,168,255,.24), transparent 68%);
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 14px;
-      border: 1px solid rgba(103,232,249,0.2);
-      border-radius: 999px;
-      color: #d8f7ff;
-      background: rgba(103,232,249,0.08);
-      font-size: .92rem;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(2.4rem, 5vw, 4.9rem);
-      line-height: 0.96;
-      letter-spacing: -0.05em;
-    }
-
-    .gradient-text {
-      background: linear-gradient(90deg, #ffffff 0%, #b6d7ff 45%, #9de7ff 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .hero-subtitle {
-      margin: 18px 0 0;
-      color: var(--muted);
-      font-size: 1.06rem;
-      line-height: 1.8;
-      max-width: 700px;
-    }
-
-    .hero-highlight {
-      margin-top: 22px;
-      padding: 16px 18px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
-      border-radius: 18px;
-      color: #dbe8ff;
-      line-height: 1.7;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 28px;
-    }
-
-    .btn {
-      border: 0;
-      cursor: pointer;
-      padding: 14px 20px;
-      border-radius: 16px;
-      font-weight: 700;
-      font-size: .98rem;
-      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    .btn:hover { transform: translateY(-2px); }
-
-    .btn-primary {
-      color: #07111f;
-      background: linear-gradient(135deg, #8fd4ff 0%, #59a8ff 45%, #7c5cff 100%);
-      box-shadow: 0 14px 32px rgba(89,168,255,0.3);
-    }
-
-    .btn-secondary {
-      color: var(--text);
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.06);
-      border-color: rgba(255,255,255,0.18);
-    }
-
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      margin-top: 28px;
-    }
-
-    .stat {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 18px;
-      padding: 16px;
-      transition: .2s ease;
-    }
-
-    .stat:hover {
-      transform: translateY(-3px);
-      border-color: rgba(255,255,255,0.14);
-      box-shadow: var(--shadow-soft);
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 1.3rem;
-      margin-bottom: 6px;
-    }
-
-    .stat span {
-      color: var(--muted);
-      font-size: .92rem;
-      line-height: 1.45;
-    }
-
-    .hero-side {
-      padding: 26px;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    .profile-card {
-      padding: 18px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 22px;
-    }
-
-    .profile-photo-wrap {
-      position: relative;
-      border-radius: 24px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.08);
-      aspect-ratio: 1 / 1.08;
-      background: linear-gradient(180deg, rgba(89,168,255,0.18), rgba(124,92,255,0.18));
-    }
-
-    .profile-photo-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .profile-photo-wrap.image-missing::after {
-      content: "PHB";
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      font-size: clamp(3rem, 8vw, 5rem);
-      font-weight: 900;
-      letter-spacing: -.06em;
-      color: rgba(255,255,255,.82);
-    }
-
-    .profile-badge {
-      position: absolute;
-      left: 14px;
-      bottom: 14px;
-      padding: 10px 12px;
-      border-radius: 14px;
-      background: rgba(7,17,31,0.72);
-      border: 1px solid rgba(255,255,255,0.08);
-      backdrop-filter: blur(10px);
-      font-size: .9rem;
-    }
-
-    .mini-list {
-      display: grid;
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    .mini-item {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      color: var(--muted);
-      font-size: .95rem;
-      padding: 12px 14px;
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 14px;
-      background: rgba(255,255,255,0.02);
-    }
-
-    .mini-item b { color: var(--text); font-weight: 600; }
-
-    .quick-proof {
-      display: grid;
-      gap: 12px;
-    }
-
-    .proof-item {
-      padding: 16px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.07);
-    }
-
-    .proof-item small {
-      color: var(--accent);
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 700;
-      letter-spacing: .03em;
-      text-transform: uppercase;
-    }
-
-    .proof-item p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.6;
-      font-size: .95rem;
-    }
-
-    section { padding: 34px 0; }
-
-    .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 20px;
-      margin-bottom: 18px;
-    }
-
-    .section-head h2 {
-      margin: 0;
-      font-size: clamp(1.5rem, 3vw, 2.3rem);
-      letter-spacing: -0.03em;
-    }
-
-    .section-head p {
-      margin: 0;
-      color: var(--muted);
-      max-width: 700px;
-      line-height: 1.7;
-    }
-
-    .about-grid,
-    .projects-grid,
-    .resume-grid,
-    .contact-grid,
-    .recommend-grid,
-    .certificate-grid,
-    .skills-grid,
-    .highlights-grid {
-      display: grid;
-      gap: 18px;
-    }
-
-    .about-grid { grid-template-columns: 1.15fr .85fr; }
-    .projects-grid { grid-template-columns: repeat(2, 1fr); }
-    .highlights-grid { grid-template-columns: repeat(3, 1fr); }
-    .certificate-grid,
-    .resume-grid,
-    .contact-grid,
-    .recommend-grid,
-    .skills-grid { grid-template-columns: repeat(2, 1fr); }
-
-    .card {
-      padding: 24px;
-      transition: .2s ease;
-    }
-
-    .card:hover {
-      border-color: var(--line-strong);
-      transform: translateY(-3px);
-    }
-
-    .card h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 1.18rem;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.8;
-    }
-
-    .timeline {
-      display: grid;
-      gap: 14px;
-    }
-
-    .timeline-item {
-      padding: 16px 18px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.07);
-    }
-
-    .timeline-item span,
-    .label {
-      display: inline-block;
-      color: var(--accent);
-      font-weight: 700;
-      margin-bottom: 6px;
-      font-size: .9rem;
-    }
-
-    .timeline-item h4 {
-      margin: 0 0 6px;
-      font-size: 1rem;
-    }
-
-    .timeline-item p {
-      margin: 0;
-      color: var(--muted);
-      font-size: .95rem;
-      line-height: 1.6;
-    }
-
-    .skills-wrap,
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .skills-wrap { margin-top: 18px; }
-    .tag-row { margin-top: 16px; }
-
-    .chip {
-      padding: 11px 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.03);
-      color: #dfe9fb;
-      font-size: .94rem;
-    }
-
-    .project-card {
-      position: relative;
-      overflow: hidden;
-      min-height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .project-cover {
-      aspect-ratio: 16 / 10;
-      border-radius: 20px;
-      overflow: hidden;
-      margin-bottom: 18px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background:
-        linear-gradient(135deg, rgba(89,168,255,.16), rgba(124,92,255,.2)),
-        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0));
-      display: grid;
-      place-items: center;
-      position: relative;
-    }
-
-    .project-cover::before {
-      content: attr(data-label);
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      font-size: .84rem;
-      font-weight: 700;
-      color: #d6efff;
-      background: rgba(7,17,31,.66);
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 999px;
-      padding: 8px 10px;
-    }
-
-    .project-cover svg {
-      width: 74px;
-      opacity: .82;
-    }
-
-    .project-card h3 {
-      font-size: 1.18rem;
-      margin-bottom: 10px;
-    }
-
-    .project-points,
-    .metric-list,
-    .resume-list,
-    .contact-box,
-    .recommend-list,
-    .language-list,
-    .achievement-list {
-      display: grid;
-      gap: 12px;
-    }
-
-    .project-points {
-      margin: 16px 0;
-    }
-
-    .point {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      color: var(--muted);
-      line-height: 1.65;
-      font-size: .95rem;
-    }
-
-    .point::before {
-      content: "•";
-      color: var(--accent);
-      font-weight: 800;
-      margin-top: 1px;
-    }
-
-    .project-actions {
-      display: flex;
-      gap: 10px;
-      margin-top: auto;
-      flex-wrap: wrap;
-    }
-
-    .featured-project {
-      grid-column: 1 / -1;
-      background: linear-gradient(180deg, rgba(22,40,69,0.98), rgba(10,20,34,0.98));
-      border: 1px solid rgba(89,168,255,0.22);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
-    }
-
-    .featured-layout {
-      display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 22px;
-      align-items: stretch;
-    }
-
-    .featured-panel {
-      padding: 8px;
-    }
-
-    .featured-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 9px 13px;
-      border-radius: 999px;
-      background: rgba(103,232,249,0.1);
-      color: #d4f8ff;
-      border: 1px solid rgba(103,232,249,0.18);
-      font-size: .88rem;
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-
-    .feature-metrics {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .feature-metric {
-      padding: 14px 16px;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .feature-metric strong {
-      display: block;
-      margin-bottom: 6px;
-      font-size: 1.08rem;
-    }
-
-    .feature-metric span {
-      color: var(--muted);
-      font-size: .92rem;
-      line-height: 1.55;
-    }
-
-    .tiny-btn {
-      padding: 11px 14px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.03);
-      font-size: .92rem;
-      font-weight: 700;
-      transition: .2s ease;
-    }
-
-    .tiny-btn:hover {
-      transform: translateY(-2px);
-      background: rgba(255,255,255,0.06);
-    }
-
-    .tiny-btn.primary {
-      background: linear-gradient(135deg, rgba(89,168,255,.2), rgba(124,92,255,.24));
-      border-color: rgba(89,168,255,0.28);
-    }
-
-    .certificate-preview {
-      position: relative;
-      border-radius: 22px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.03);
-      min-height: 300px;
-    }
-
-    .certificate-preview img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .certificate-preview.image-missing::before {
-      content: "Certificado Jornada Python";
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      padding: 32px;
-      text-align: center;
-      color: var(--muted);
-      font-weight: 700;
-    }
-
-    .certificate-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 42%, rgba(7,17,31,0.9));
-      display: flex;
-      flex-direction: column;
-      justify-content: end;
-      padding: 18px;
-      gap: 10px;
-    }
-
-    .resume-item,
-    .metric-item,
-    .language-item,
-    .achievement-item,
-    .contact-item,
-    .form-field,
-    .recommendation-card,
-    .skill-card {
-      padding: 16px 18px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .resume-item,
-    .achievement-item {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-    }
-
-    .resume-item .dot,
-    .achievement-item .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--primary));
-      margin-top: 8px;
-      flex: 0 0 auto;
-    }
-
-    .resume-item b,
-    .achievement-item b,
-    .metric-item b,
-    .language-item b {
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    .metric-item strong {
-      display: block;
-      font-size: 1.35rem;
-      margin-bottom: 4px;
-    }
-
-    .metric-item span,
-    .language-item span {
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    .language-item {
-      display: flex;
-      justify-content: space-between;
-      gap: 14px;
-      align-items: center;
-    }
-
-    .language-level {
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.03);
-      white-space: nowrap;
-      font-size: .9rem;
-      color: #dfe9fb;
-    }
-
-    .skill-card h3 {
-      margin-bottom: 16px;
-    }
-
-    .capability-list {
-      display: grid;
-      gap: 12px;
-    }
-
-    .capability-item {
-      padding: 16px 18px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .capability-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 14px;
-      align-items: center;
-      margin-bottom: 8px;
-    }
-
-    .capability-top b { font-size: .98rem; }
-
-    .capability-level {
-      padding: 7px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(103,232,249,.18);
-      color: #d6f8ff;
-      background: rgba(103,232,249,.07);
-      font-size: .8rem;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-
-    .capability-item p {
-      font-size: .93rem;
-      line-height: 1.65;
-    }
-
-    .skill-bars {
-      display: grid;
-      gap: 14px;
-    }
-
-    .skill-row {
-      display: grid;
-      gap: 8px;
-    }
-
-    .skill-row-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      font-size: .95rem;
-      color: #eaf2ff;
-    }
-
-    .skill-track {
-      height: 10px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.07);
-      overflow: hidden;
-    }
-
-    .skill-fill {
-      height: 100%;
-      border-radius: 999px;
-      background: linear-gradient(90deg, var(--accent), var(--primary), var(--primary-2));
-    }
-
-    .contact-item small,
-    .field-label {
-      display: block;
-      color: var(--muted);
-      margin-bottom: 8px;
-      font-size: .85rem;
-      letter-spacing: .03em;
-      text-transform: uppercase;
-    }
-
-    .contact-item a,
-    .contact-item span {
-      font-weight: 700;
-      word-break: break-word;
-    }
-
-    .form-field {
-      padding: 14px;
-      display: grid;
-      gap: 10px;
-    }
-
-    .form-field input,
-    .form-field textarea {
-      width: 100%;
-      padding: 14px 14px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(7,17,31,0.75);
-      color: var(--text);
-      outline: none;
-      resize: vertical;
-    }
-
-    .form-field input:focus,
-    .form-field textarea:focus {
-      border-color: rgba(103,232,249,0.45);
-      box-shadow: 0 0 0 4px rgba(103,232,249,0.08);
-    }
-
-    .field-help {
-      color: var(--muted);
-      font-size: .88rem;
-      line-height: 1.5;
-    }
-
-    .status-message {
-      margin-top: 14px;
-      padding: 14px 16px;
-      border-radius: 14px;
-      display: none;
-      font-size: .95rem;
-      line-height: 1.6;
-    }
-
-    .status-message.success {
-      display: block;
-      background: rgba(134,239,172,0.10);
-      border: 1px solid rgba(134,239,172,0.22);
-      color: #d9ffe8;
-    }
-
-    .status-message.error {
-      display: block;
-      background: rgba(248,113,113,0.10);
-      border: 1px solid rgba(248,113,113,0.22);
-      color: #ffe0e0;
-    }
-
-    .recommend-list {
-      margin-top: 4px;
-      max-height: 660px;
-      overflow: auto;
-      padding-right: 4px;
-    }
-
-    .recommendation-card {
-      display: grid;
-      gap: 12px;
-    }
-
-    .recommendation-top {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .recommendation-avatar {
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: linear-gradient(135deg, rgba(89,168,255,.25), rgba(124,92,255,.25));
-      flex: 0 0 auto;
-    }
-
-    .recommendation-name {
-      font-weight: 700;
-      font-size: 1rem;
-    }
-
-    .recommendation-date {
-      color: var(--muted);
-      font-size: .88rem;
-      margin-top: 4px;
-    }
-
-    .recommendation-text {
-      color: #dfe9fb;
-      line-height: 1.75;
-      font-size: .97rem;
-      white-space: pre-wrap;
-    }
-
-    .recommendation-empty {
-      color: var(--muted);
-      padding: 18px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.02);
-      border: 1px dashed rgba(255,255,255,0.08);
-      line-height: 1.7;
-    }
-
-    .glass-note {
-      margin-top: 16px;
-      padding: 16px 18px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .social-inline {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .social-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 11px 14px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.03);
-      color: #e8eefb;
-      font-weight: 600;
-      transition: .2s ease;
-    }
-
-    .social-link:hover {
-      transform: translateY(-2px);
-      background: rgba(255,255,255,0.06);
-      border-color: rgba(255,255,255,0.16);
-    }
-
-    footer {
-      padding: 24px 0 42px;
-      color: var(--muted);
-    }
-
-    .footer-box {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      border-top: 1px solid rgba(255,255,255,0.07);
-      padding-top: 22px;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(22px);
-      transition: opacity .55s ease, transform .55s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (max-width: 1060px) {
-      .hero-grid,
-      .about-grid,
-      .projects-grid,
-      .certificate-grid,
-      .resume-grid,
-      .contact-grid,
-      .recommend-grid,
-      .skills-grid,
-      .highlights-grid,
-      .featured-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-stats,
-      .feature-metrics {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 760px) {
-      .nav {
-        padding: 14px 0;
-        position: relative;
-      }
-
-      .nav-toggle { display: inline-flex; }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: calc(100% + 8px);
-        left: 0;
-        right: 0;
-        padding: 12px;
-        border-radius: 18px;
-        background: rgba(7,17,31,.98);
-        border: 1px solid rgba(255,255,255,.1);
-        box-shadow: var(--shadow);
-      }
-
-      .nav-links.open {
-        display: grid;
-        gap: 4px;
-      }
-
-      .nav-links a { width: 100%; }
-      .hero { padding-top: 28px; }
-      .hero-main, .hero-side, .card { padding: 20px; }
-      .hero-stats, .feature-metrics { grid-template-columns: 1fr; }
-      .hero-actions { flex-direction: column; }
-      .btn { width: 100%; }
-      .section-head { align-items: flex-start; flex-direction: column; }
-      .certificate-preview { min-height: 220px; }
-      h1 { line-height: 1.02; }
-      .language-item,
-      .mini-item,
-      .skill-row-top { grid-template-columns: 1fr; display: grid; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
-      }
-      .reveal { opacity: 1; transform: none; }
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Paulo Henrique de Melo Bezerra",
-      "url": "https://phmbezerra.github.io/portfolioHUB/",
-      "image": "https://phmbezerra.github.io/portfolioHUB/assets/img/foto-perfil.jpg",
-      "jobTitle": "Desenvolvedor de Software em formação",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Brasília",
-        "addressRegion": "DF",
-        "addressCountry": "BR"
-      },
-      "alumniOf": {
-        "@type": "CollegeOrUniversity",
-        "name": "CEUB"
-      },
-      "sameAs": [
-        "https://github.com/phmbezerra",
-        "https://www.linkedin.com/in/paulo-henrique-melo-bezerra-8b1b28372/"
-      ]
-    }
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Paulo Henrique de Melo Bezerra",
+    "url": "https://phmbezerra.github.io/portfolioHUB/",
+    "image": "https://phmbezerra.github.io/portfolioHUB/assets/img/foto-perfil.jpg",
+    "jobTitle": "Desenvolvedor de Software em formação",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Brasília",
+      "addressRegion": "DF",
+      "addressCountry": "BR"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "CEUB"
+    },
+    "sameAs": [
+      "https://github.com/phmbezerra",
+      "https://www.linkedin.com/in/paulo-henrique-melo-bezerra-8b1b28372/"
+    ]
+  }
   </script>
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-  <div class="bg-grid"></div>
-  <div class="glow-blob"></div>
+  <div class="page-noise" aria-hidden="true"></div>
 
-  <header>
-    <div class="container nav">
-      <a class="brand" href="#inicio">
-        <div class="brand-badge">PHB</div>
-        <div>Paulo Henrique</div>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#inicio" aria-label="Ir para o início">
+        <span class="brand-mark">PH</span>
+        <span>Paulo Henrique</span>
       </a>
 
-      <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-controls="mainNav" aria-expanded="false">☰</button>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menu">☰</button>
 
-      <nav class="nav-links" id="mainNav" aria-label="Navegação principal">
-        <a href="#sobre">Sobre</a>
-        <a href="#habilidades">Habilidades</a>
+      <nav id="main-nav" class="nav-links" aria-label="Navegação principal">
         <a href="#projetos">Projetos</a>
-        <a href="#certificados">Certificados</a>
-        <a href="#curriculo">Currículo</a>
-        <a href="#recomendacoes">Recomendações</a>
+        <a href="#laboratorio">Laboratório</a>
+        <a href="#stack">Stack</a>
+        <a href="#sobre">Sobre</a>
         <a href="#contato">Contato</a>
       </nav>
     </div>
   </header>
 
   <main id="conteudo">
-    <div id="inicio"></div>
-    <section class="hero">
+    <section id="inicio" class="hero">
       <div class="container hero-grid">
-        <div class="panel hero-main reveal">
-          <div class="eyebrow">💻 Ciência da Computação • CEUB • Brasília/DF</div>
-          <h1><span class="gradient-text">Desenvolvimento de software</span><br>integrando sistemas, dados e experiência.</h1>
-          <p class="hero-subtitle">
-            Sou Paulo Henrique de Melo Bezerra, estudante de Ciência da Computação. Desenvolvo aplicações web,
-            automações e integrações que conectam <strong>interface, back-end, banco de dados e sistemas externos</strong>,
-            utilizando tecnologias como Java, Laravel, Livewire, JavaScript, Python, SQLite e Git/GitHub.
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span class="status-dot"></span> Ciência da Computação • CEUB • Brasília/DF</div>
+          <h1>Construo software que conecta <span>interfaces, sistemas e dados.</span></h1>
+          <p class="hero-lead">
+            Sou Paulo Henrique, desenvolvedor de software em formação. Trabalho com aplicações full stack,
+            integrações entre sistemas, automação e experimentação computacional — transformando ideias em projetos funcionais, testáveis e documentados.
           </p>
 
-          <div class="hero-highlight">
-            Meu objetivo é transformar aprendizado em sistemas funcionais e bem apresentados: entender o problema,
-            estruturar a solução, integrar tecnologias, testar os fluxos e documentar cada entrega. O ecossistema
-            EchoCraft + EchoPanel representa meu projeto mais completo até agora, unindo Java, Laravel, API autenticada,
-            persistência de dados e comandos remotos.
-          </div>
-
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#projetos">Ver projetos</a>
-            <a class="btn btn-secondary" href="https://github.com/phmbezerra" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a class="btn btn-secondary" href="https://www.linkedin.com/in/paulo-henrique-melo-bezerra-8b1b28372/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a class="btn btn-secondary" href="assets/docs/curriculo-paulo-henrique.pdf" download>Baixar currículo</a>
+            <a class="btn btn-primary" href="#projetos">Ver projetos selecionados</a>
+            <a class="btn btn-secondary" href="https://github.com/phmbezerra" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a class="btn btn-secondary" href="assets/docs/Paulo_Henrique_Curriculo_Profissional.pdf" target="_blank" rel="noopener noreferrer">Currículo ↗</a>
           </div>
 
-          <div class="hero-stats">
-            <div class="stat">
-              <strong>9 projetos</strong>
-              <span>Aplicações web, automações, APIs, banco de dados e integração entre Java e Laravel.</span>
-            </div>
-            <div class="stat">
-              <strong>EchoCraft + EchoPanel</strong>
-              <span>Ecossistema com memória temporal, painel Laravel, API autenticada e restauração remota.</span>
-            </div>
-            <div class="stat">
-              <strong>Integração real</strong>
-              <span>Comunicação entre plugin Java, API REST, painel web, SQLite e fila de comandos.</span>
-            </div>
-            <div class="stat">
-              <strong id="approvedCount">0</strong>
-              <span>Recomendações públicas aprovadas para reforçar confiança e credibilidade.</span>
-            </div>
+          <div class="hero-focus" aria-label="Áreas de atuação">
+            <span>Full stack</span>
+            <span>Integrações</span>
+            <span>APIs</span>
+            <span>Pesquisa computacional</span>
           </div>
         </div>
 
-        <aside class="panel hero-side reveal">
-          <div class="profile-card">
-            <div class="profile-photo-wrap">
-              <img src="assets/img/foto-perfil.jpg" alt="Foto de Paulo Henrique" fetchpriority="high" onerror="this.style.display='none'; this.parentElement.classList.add('image-missing')" />
-              <div class="profile-badge">Desenvolvimento de Software • Brasília/DF</div>
-            </div>
-
-            <div class="mini-list">
-              <div class="mini-item"><span>Foco atual</span><b>Desenvolvimento full stack, integrações e sistemas</b></div>
-              <div class="mini-item"><span>Stack principal</span><b>Java, Laravel, Livewire, JavaScript, Python e SQLite</b></div>
-              <div class="mini-item"><span>Em evolução</span><b>PostgreSQL, testes, deploy e arquitetura de software</b></div>
-            </div>
-
-            <div class="social-inline">
-              <a class="social-link" href="https://github.com/phmbezerra" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-              <a class="social-link" href="https://www.linkedin.com/in/paulo-henrique-melo-bezerra-8b1b28372/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-            </div>
+        <aside class="profile-panel reveal" aria-label="Resumo profissional">
+          <div class="profile-photo">
+            <img src="assets/img/foto-perfil.jpg" alt="Foto de Paulo Henrique" />
           </div>
-
-          <div class="quick-proof">
-            <div class="proof-item">
-              <small>Como eu trabalho</small>
-              <p>Gosto de construir com organização, boa apresentação visual e foco em transformar requisitos em algo funcional e fácil de entender.</p>
-            </div>
-            <div class="proof-item">
-              <small>O que me move</small>
-              <p>Aprender construindo, explorar novas tecnologias e transformar ideias em soluções cada vez mais completas, claras e confiáveis.</p>
+          <div class="profile-content">
+            <p class="kicker">PERFIL</p>
+            <h2>Software Developer</h2>
+            <p>Java · Laravel · React · Python · APIs REST · SQL</p>
+            <div class="profile-meta">
+              <div><span>Foco</span><strong>Engenharia de software</strong></div>
+              <div><span>Formação</span><strong>Ciência da Computação</strong></div>
+              <div><span>Local</span><strong>Brasília, DF</strong></div>
             </div>
           </div>
         </aside>
       </div>
     </section>
 
-    <section id="sobre">
+    <section id="projetos" class="section projects-section">
       <div class="container">
-        <div class="section-head reveal">
-          <div><h2>Sobre mim</h2></div>
-          <p>Mais do que estudar tecnologia, eu busco aplicar o que aprendo em projetos reais, organizados, úteis e visualmente bem resolvidos.</p>
+        <div class="section-heading reveal">
+          <div>
+            <p class="kicker">PROJETOS SELECIONADOS</p>
+            <h2>O trabalho que melhor representa meu nível atual.</h2>
+          </div>
+          <p>Projetos escolhidos pela profundidade técnica, integração entre componentes e capacidade de demonstrar decisões reais de desenvolvimento.</p>
         </div>
 
-        <div class="about-grid">
-          <article class="card reveal">
-            <h3>Quem eu sou</h3>
-            <p>
-              Sou estudante de Ciência da Computação no CEUB e desenvolvedor de software em formação. Tenho interesse em aplicações web,
-              automação, sistemas orientados a dados e experiência do usuário. Aprendo construindo: transformo ideias em protótipos,
-              testo possibilidades, investigo falhas e documento decisões para tornar cada projeto mais claro e sustentável.
-            </p>
-            <div class="skills-wrap">
-              <span class="chip">HTML</span>
-              <span class="chip">CSS</span>
-              <span class="chip">JavaScript</span>
-              <span class="chip">React</span>
-              <span class="chip">Python</span>
-              <span class="chip">Java</span>
-              <span class="chip">PHP</span>
-              <span class="chip">Laravel</span>
-              <span class="chip">Livewire</span>
-              <span class="chip">SQLite</span>
-              <span class="chip">Git & GitHub</span>
-              <span class="chip">Responsividade</span>
-            </div>
-          </article>
-
-          <article class="card reveal">
-            <h3>Resumo da trajetória</h3>
-            <div class="timeline">
-              <div class="timeline-item">
-                <span>Formação</span>
-                <h4>Ciência da Computação — CEUB</h4>
-                <p>2º semestre em andamento, com base em programação, lógica, banco de dados, arquitetura de computadores e desenvolvimento de software.</p>
-              </div>
-              <div class="timeline-item">
-                <span>Prática</span>
-                <h4>Projetos próprios e portfólio publicado</h4>
-                <p>Construção de interfaces web, automações, APIs, sistemas com persistência de dados e plugins em Java, publicados e documentados no GitHub.</p>
-              </div>
-              <div class="timeline-item">
-                <span>Direção</span>
-                <h4>Evolução contínua</h4>
-                <p>Ampliar minha experiência com projetos mais completos, colaboração, boas práticas e desafios que exijam aprendizado constante.</p>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="section-head reveal">
-          <div><h2>Diferenciais em destaque</h2></div>
-          <p>Características que aparecem de forma consistente nos projetos que desenvolvo e na maneira como organizo meu aprendizado.</p>
-        </div>
-
-        <div class="highlights-grid">
-          <article class="card reveal">
-            <span class="label">Automação</span>
-            <h3>Rotinas repetitivas viram ferramentas</h3>
-            <p>Uso Python e lógica de programação para organizar dados, arquivos e processos, sempre buscando reduzir trabalho manual e erros.</p>
-          </article>
-
-          <article class="card reveal">
-            <span class="label">Manutenção e diagnóstico</span>
-            <h3>Investigo, testo e corrijo</h3>
-            <p>Tenho prática em depuração, persistência de dados e correção incremental de falhas em projetos web e sistemas orientados a eventos.</p>
-          </article>
-
-          <article class="card reveal">
-            <span class="label">Organização</span>
-            <h3>Código acompanhado de contexto</h3>
-            <p>Valorizo Git, documentação, estrutura de pastas e explicações claras para facilitar manutenção, colaboração e evolução do projeto.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="habilidades">
-      <div class="container">
-        <div class="section-head reveal">
-          <div><h2>Habilidades e competências</h2></div>
-          <p>Apresentação visual das principais competências técnicas e comportamentais que venho desenvolvendo durante minha formação.</p>
-        </div>
-
-        <div class="skills-grid">
-          <article class="card skill-card reveal">
-            <h3>Competências técnicas</h3>
-            <div class="capability-list">
-              <div class="capability-item">
-                <div class="capability-top"><b>Front-end</b><span class="capability-level">Uso em projetos</span></div>
-                <p>HTML semântico, CSS responsivo, JavaScript, React e construção de interfaces com foco em clareza e usabilidade.</p>
-              </div>
-              <div class="capability-item">
-                <div class="capability-top"><b>Back-end e automação</b><span class="capability-level">Base prática</span></div>
-                <p>Laravel, Livewire, PHP, Python, FastAPI, APIs REST, autenticação por token, filas de comandos e automação.</p>
-              </div>
-              <div class="capability-item">
-                <div class="capability-top"><b>Dados e persistência</b><span class="capability-level">Uso em projetos</span></div>
-                <p>SQLite, CRUD, modelagem relacional, Supabase/PostgreSQL e integração de dados com aplicações.</p>
-              </div>
-              <div class="capability-item">
-                <div class="capability-top"><b>Java e integração entre sistemas</b><span class="capability-level">Projeto autoral</span></div>
-                <p>Plugin Paper com eventos, memória temporal, persistência em SQLite e comunicação assíncrona com uma API Laravel autenticada.</p>
-              </div>
-              <div class="capability-item">
-                <div class="capability-top"><b>Ferramentas de trabalho</b><span class="capability-level">Uso contínuo</span></div>
-                <p>Git, GitHub, depuração, organização de repositórios, documentação técnica e publicação no GitHub Pages.</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="card skill-card reveal">
-            <h3>Competências profissionais</h3>
-            <div class="achievement-list">
-              <div class="achievement-item">
-                <div class="dot"></div>
-                <div>
-                  <b>Aprendizado rápido</b>
-                  <span>Aprendo novos recursos testando, comparando resultados e incorporando feedback ao projeto.</span>
-                </div>
-              </div>
-              <div class="achievement-item">
-                <div class="dot"></div>
-                <div>
-                  <b>Organização</b>
-                  <span>Estruturo arquivos, tarefas, commits e documentação para deixar a evolução do projeto fácil de acompanhar.</span>
-                </div>
-              </div>
-              <div class="achievement-item">
-                <div class="dot"></div>
-                <div>
-                  <b>Comunicação clara</b>
-                  <span>Procuro explicar decisões, registrar problemas e apresentar soluções de maneira objetiva.</span>
-                </div>
-              </div>
-              <div class="achievement-item">
-                <div class="dot"></div>
-                <div>
-                  <b>Comprometimento</b>
-                  <span>Assumo responsabilidade pelas entregas e persisto na investigação até encontrar uma solução funcional.</span>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="projetos">
-      <div class="container">
-        <div class="section-head reveal">
-          <div><h2>Projetos em destaque</h2></div>
-          <p>Projetos que demonstram integração de sistemas, desenvolvimento web, automação, persistência de dados e evolução técnica.</p>
-        </div>
-
-        <div class="projects-grid">
-          <article class="card project-card featured-project reveal">
-            <div class="featured-layout">
-              <div class="featured-panel">
-                <div class="featured-badge">⭐ Ecossistema principal</div>
-                <h3 style="font-size: 1.9rem; margin-bottom: 12px;">EchoCraft + EchoPanel</h3>
-                <p>
-                  Sistema integrado de memória temporal para servidores Minecraft. O plugin EchoCraft registra versões
-                  de estruturas, rastros e ações de jogadores; o EchoPanel monitora o servidor, organiza linhas do tempo
-                  e permite restaurar memórias remotamente.
-                </p>
-
-                <div class="project-points">
-                  <div class="point">Plugin Paper em Java com fotografias temporais, reconstrução de blocos, rastros de jogadores e persistência em SQLite.</div>
-                  <div class="point">Painel em Laravel e Livewire com autenticação, status por heartbeat, histórico visual e gerenciamento seguro de chaves.</div>
-                  <div class="point">API REST autenticada e fila de comandos: o painel solicita uma restauração, o plugin executa no servidor e devolve o resultado.</div>
-                </div>
-
-                <div class="skills-wrap">
-                  <span class="chip">Java</span>
-                  <span class="chip">Paper API</span>
-                  <span class="chip">Laravel</span>
-                  <span class="chip">Livewire</span>
-                  <span class="chip">REST API</span>
-                  <span class="chip">SQLite</span>
-                  <span class="chip">Gradle</span>
-                </div>
-
-                <div class="project-actions" style="margin-top: 18px;">
-                  <a class="tiny-btn primary" href="https://github.com/phmbezerra/EchoCraft" target="_blank" rel="noopener noreferrer">Ver EchoCraft</a>
-                  <a class="tiny-btn primary" href="https://github.com/phmbezerra/EchoPanel" target="_blank" rel="noopener noreferrer">Ver EchoPanel</a>
-                  <a class="tiny-btn" href="#contato">Falar sobre o projeto</a>
-                </div>
-              </div>
-
-              <div class="featured-panel">
-                <div class="feature-metrics">
-                  <div class="feature-metric">
-                    <strong>Memória temporal</strong>
-                    <span>Estruturas são registradas em versões com blocos, causas, coordenadas, rastros e ações.</span>
-                  </div>
-                  <div class="feature-metric">
-                    <strong>Painel em tempo real</strong>
-                    <span>Heartbeat, jogadores conectados, versão do servidor, atividades e linhas temporais visuais.</span>
-                  </div>
-                  <div class="feature-metric">
-                    <strong>Controle remoto</strong>
-                    <span>Restauração iniciada pelo navegador com estados pendente, processando, concluído ou falhou.</span>
-                  </div>
-                  <div class="feature-metric">
-                    <strong>Segurança e persistência</strong>
-                    <span>Chaves individuais de API, banco SQLite, backups e validação de propriedade dos servidores.</span>
-                  </div>
-                </div>
-
-                <div class="glass-note" style="margin-top: 18px;">
-                  <strong style="color: var(--text);">Por que este projeto se destaca?</strong><br>
-                  Porque reúne duas aplicações independentes e funcionais, escritas em tecnologias diferentes,
-                  comunicando-se por uma API autenticada. Ele demonstra back-end, interface, banco de dados,
-                  integração, concorrência, depuração e visão de produto.
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="card project-card reveal">
-            <div class="project-cover" data-label="React + FastAPI">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
-                <rect x="4" y="5" width="16" height="14" rx="2"></rect>
-                <path d="M8 9h8"></path>
-                <path d="M8 13h5"></path>
-                <path d="M16 13v3"></path>
-                <path d="M14.5 14.5h3"></path>
-              </svg>
-            </div>
-            <h3>AccessVault</h3>
-            <p>Plataforma de gestão de acessos com autenticação, níveis de permissão, solicitações, aprovação e trilha de auditoria.</p>
-            <div class="project-points">
-              <div class="point">Fluxo administrativo completo com usuários, sistemas, solicitações e geração automática de permissões.</div>
-              <div class="point">Dashboard com filtros, rotas protegidas e registro de eventos importantes para rastreabilidade.</div>
-            </div>
-            <div class="skills-wrap">
-              <span class="chip">React</span>
-              <span class="chip">FastAPI</span>
-              <span class="chip">JWT</span>
-              <span class="chip">SQLite</span>
-              <span class="chip">Auditoria</span>
-            </div>
-            <div class="project-actions">
-              <a class="tiny-btn primary" href="https://github.com/phmbezerra" target="_blank" rel="noopener noreferrer">Ver no GitHub</a>
-            </div>
-          </article>
-
-          <article class="card project-card reveal">
-            <div class="project-cover" data-label="Projeto Web">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
-                <rect x="3" y="5" width="18" height="14" rx="2"></rect>
-                <path d="M3 9h18"></path>
-                <path d="M8 15l2-2-2-2"></path>
-                <path d="M13 17l2-8"></path>
-              </svg>
-            </div>
-            <h3>TaskFlow Landing Page</h3>
-            <p>Landing page responsiva com layout moderno, hierarquia visual forte e apresentação clara de um produto digital.</p>
-            <div class="project-points">
-              <div class="point">Demonstra domínio de estrutura visual, seção hero, métricas e navegação organizada.</div>
-              <div class="point">Projeto focado em interface, comunicação visual e adaptação para diferentes telas.</div>
-            </div>
-            <div class="skills-wrap">
-              <span class="chip">HTML</span>
-              <span class="chip">CSS</span>
-              <span class="chip">JavaScript</span>
-              <span class="chip">Responsividade</span>
-            </div>
-            <div class="project-actions">
-              <a class="tiny-btn primary" href="https://github.com/phmbezerra/taskflow-landing-page" target="_blank" rel="noopener noreferrer">Ver código</a>
-            </div>
-          </article>
-
-          <article class="card project-card reveal">
-            <div class="project-cover" data-label="Automação">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
-                <path d="M12 2v4"></path>
-                <path d="M12 18v4"></path>
-                <path d="M4.93 4.93l2.83 2.83"></path>
-                <path d="M16.24 16.24l2.83 2.83"></path>
-                <path d="M2 12h4"></path>
-                <path d="M18 12h4"></path>
-                <path d="M4.93 19.07l2.83-2.83"></path>
-                <path d="M16.24 7.76l2.83-2.83"></path>
-                <circle cx="12" cy="12" r="3"></circle>
-              </svg>
-            </div>
-            <h3>Organizador de Arquivos</h3>
-            <p>Script em Python para identificar arquivos por extensão, criar subpastas automaticamente e gerar um relatório final.</p>
-            <div class="project-points">
-              <div class="point">Automatiza uma tarefa repetitiva e reduz o trabalho manual de organização.</div>
-              <div class="point">Aplica manipulação de arquivos, validações e lógica em um cenário prático.</div>
-            </div>
-            <div class="skills-wrap">
-              <span class="chip">Python</span>
-              <span class="chip">Automação</span>
-              <span class="chip">Arquivos</span>
-            </div>
-            <div class="project-actions">
-              <a class="tiny-btn primary" href="https://github.com/phmbezerra/organizador-de-arquivos" target="_blank" rel="noopener noreferrer">Ver código</a>
-            </div>
-          </article>
-
-          <article class="card project-card reveal">
-            <div class="project-cover" data-label="Banco de Dados">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
-                <ellipse cx="12" cy="5" rx="7" ry="3"></ellipse>
-                <path d="M5 5v6c0 1.7 3.1 3 7 3s7-1.3 7-3V5"></path>
-                <path d="M5 11v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"></path>
-              </svg>
-            </div>
-            <h3>Sistema de Estoque com SQLite</h3>
-            <p>Aplicação em Python com cadastro, listagem, atualização e remoção de produtos, focada em persistência e operações CRUD.</p>
-            <div class="project-points">
-              <div class="point">Simula um cenário real de controle de itens e organização de registros.</div>
-              <div class="point">Reforça modelagem, consultas e estruturação de pequenas aplicações orientadas a dados.</div>
-            </div>
-            <div class="skills-wrap">
-              <span class="chip">Python</span>
-              <span class="chip">SQLite</span>
-              <span class="chip">CRUD</span>
-            </div>
-            <div class="project-actions">
-              <a class="tiny-btn primary" href="https://github.com/phmbezerra/sistema-estoque-python" target="_blank" rel="noopener noreferrer">Ver código</a>
-            </div>
-          </article>
-
-          <article class="card project-card reveal">
-            <div class="project-cover" data-label="JavaScript">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
-                <path d="M5 7h14"></path>
-                <path d="M7 12h10"></path>
-                <path d="M9 17h6"></path>
-                <rect x="3" y="4" width="18" height="16" rx="2"></rect>
-              </svg>
-            </div>
-            <h3>To-do List JS</h3>
-            <p>Aplicação web de lista de tarefas com filtros, edição e persistência no navegador.</p>
-            <div class="project-points">
-              <div class="point">Demonstra manipulação de estado, eventos e interação com o DOM.</div>
-              <div class="point">Inclui recursos de usabilidade além do fluxo básico de criar e remover tarefas.</div>
-            </div>
-            <div class="skills-wrap">
-              <span class="chip">JavaScript</span>
-              <span class="chip">DOM</span>
-              <span class="chip">Local Storage</span>
-            </div>
-            <div class="project-actions">
-              <a class="tiny-btn primary" href="https://github.com/phmbezerra/to-do-list-js" target="_blank" rel="noopener noreferrer">Ver código</a>
-            </div>
-          </article>
-
-          <article class="card project-card reveal">
-            <div class="project-cover" data-label="Fundamentos Web">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
-                <path d="M6 4v16"></path>
-                <path d="M18 4v16"></path>
-                <path d="M6 12h12"></path>
-                <rect x="4" y="4" width="16" height="16" rx="2"></rect>
-              </svg>
-            </div>
-            <h3>Calculadora Web</h3>
-            <p>Calculadora desenvolvida para praticar eventos, lógica de operações e interação visual.</p>
-            <div class="project-points">
-              <div class="point">Consolida fundamentos de interface e comportamento com JavaScript.</div>
-              <div class="point">Reforça organização visual, manipulação de eventos e validação das operações.</div>
-            </div>
-            <div class="skills-wrap">
-              <span class="chip">HTML</span>
-              <span class="chip">CSS</span>
-              <span class="chip">JavaScript</span>
-            </div>
-            <div class="project-actions">
-              <a class="tiny-btn primary" href="https://github.com/phmbezerra/calculadora-web" target="_blank" rel="noopener noreferrer">Ver código</a>
-            </div>
-          </article>
-
-          <article class="card project-card reveal">
-            <div class="project-cover" data-label="Portfólio">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
-                <path d="M12 3l8 4v10l-8 4-8-4V7l8-4z"></path>
-                <path d="M12 12l8-5"></path>
-                <path d="M12 12v9"></path>
-                <path d="M12 12L4 7"></path>
-              </svg>
-            </div>
-            <h3>portfolioHUB</h3>
-            <p>Portfólio profissional publicado no GitHub Pages com projetos, currículo, certificação, contato e recomendações públicas.</p>
-            <div class="project-points">
-              <div class="point">Centraliza minha evolução técnica e melhora a apresentação dos projetos para recrutadores e colaboradores.</div>
-              <div class="point">Inclui responsividade, SEO, dados estruturados, acessibilidade e integração com Supabase.</div>
-            </div>
-            <div class="skills-wrap">
-              <span class="chip">HTML</span>
-              <span class="chip">CSS</span>
-              <span class="chip">Supabase</span>
-              <span class="chip">GitHub Pages</span>
-              <span class="chip">SEO</span>
-            </div>
-            <div class="project-actions">
-              <a class="tiny-btn primary" href="https://github.com/phmbezerra/portfolioHUB" target="_blank" rel="noopener noreferrer">Ver código</a>
-              <a class="tiny-btn" href="https://phmbezerra.github.io/portfolioHUB/" target="_blank" rel="noopener noreferrer">Ver site</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="certificados">
-      <div class="container">
-        <div class="section-head reveal">
-          <div><h2>Certificados</h2></div>
-          <p>Formação complementar que reforça minha base prática, especialmente em Python e desenvolvimento orientado à aplicação.</p>
-        </div>
-
-        <div class="certificate-grid">
-          <article class="card reveal">
-            <h3>Jornada Python — Hashtag Treinamentos</h3>
-            <p>
-              Certificação com carga horária de 8 horas, concluída em 18/09/2025, voltada ao fortalecimento da base prática em Python.
-            </p>
-            <div class="achievement-list" style="margin-top: 18px;">
-              <div class="achievement-item">
-                <div class="dot"></div>
-                <div>
-                  <b>Base prática em Python</b>
-                  <span>Consolidação de lógica, estruturação de código e fundamentos úteis para automação e sistemas simples.</span>
-                </div>
-              </div>
-              <div class="achievement-item">
-                <div class="dot"></div>
-                <div>
-                  <b>Coerência com meus projetos</b>
-                  <span>Complementa diretamente os trabalhos em Python presentes no meu GitHub e reforça a consistência do portfólio.</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="card reveal">
-            <div class="certificate-preview">
-              <img src="assets/img/certificado-python.jpg" alt="Certificado Jornada Python" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('image-missing')" />
-              <div class="certificate-overlay">
-                <strong>Certificado em destaque</strong>
-                <span style="color: var(--muted);">Formação complementar alinhada aos projetos de automação e desenvolvimento presentes no portfólio.</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="curriculo">
-      <div class="container">
-        <div class="section-head reveal">
-          <div><h2>Perfil profissional</h2></div>
-          <p>Uma visão direta sobre minha formação, interesses, projetos e forma de trabalhar com tecnologia.</p>
-        </div>
-
-        <div class="resume-grid">
-          <article class="card reveal">
-            <h3>Resumo</h3>
-            <p>
-              Estudante de Ciência da Computação com interesse em desenvolvimento full stack, integrações, automação e banco de dados. Perfil proativo e orientado ao aprendizado contínuo, com projetos autorais publicados e documentados no GitHub.
-            </p>
-            <div class="resume-list" style="margin-top: 18px;">
-              <div class="resume-item">
-                <div class="dot"></div>
-                <div>
-                  <b>Formação acadêmica</b>
-                  <span>Ciência da Computação — CEUB • 2º semestre • Brasília/DF</span>
-                </div>
-              </div>
-              <div class="resume-item">
-                <div class="dot"></div>
-                <div>
-                  <b>Áreas de interesse</b>
-                  <span>Desenvolvimento full stack, automação, APIs, manutenção de sistemas e persistência de dados.</span>
-                </div>
-              </div>
-              <div class="resume-item">
-                <div class="dot"></div>
-                <div>
-                  <b>Objetivo</b>
-                  <span>Contribuir em uma equipe de desenvolvimento, aprendendo com projetos reais e entregando melhorias com responsabilidade.</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="card reveal">
-            <h3>Diferenciais</h3>
-            <div class="resume-list">
-              <div class="resume-item">
-                <div class="dot"></div>
-                <div>
-                  <b>Portfólio próprio</b>
-                  <span>Apresentação profissional com projetos, habilidades, certificação, contato e recomendações públicas.</span>
-                </div>
-              </div>
-              <div class="resume-item">
-                <div class="dot"></div>
-                <div>
-                  <b>Projetos públicos no GitHub</b>
-                  <span>Mostram evolução prática, iniciativa, constância de estudo e organização do aprendizado.</span>
-                </div>
-              </div>
-              <div class="resume-item">
-                <div class="dot"></div>
-                <div>
-                  <b>Integração full stack em destaque</b>
-                  <span>EchoCraft e EchoPanel demonstram comunicação entre Java e Laravel, API autenticada, persistência, filas de comandos, depuração e controle remoto.</span>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <div class="resume-grid" style="margin-top: 18px;">
-          <article class="card reveal">
-            <h3>Idiomas</h3>
-            <div class="language-list">
-              <div class="language-item">
-                <div>
-                  <b>Português</b>
-                  <span>Comunicação nativa.</span>
-                </div>
-                <span class="language-level">Nativo</span>
-              </div>
-              <div class="language-item">
-                <div>
-                  <b>Inglês</b>
-                  <span>Em desenvolvimento, com foco em leitura técnica e evolução contínua.</span>
-                </div>
-                <span class="language-level">Básico / estudo contínuo</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="card reveal">
-            <h3>Métricas do perfil</h3>
-            <div class="metric-list">
-              <div class="metric-item">
-                <strong>Full stack com integração</strong>
-                <span>Combino interface, lógica, APIs, persistência e comunicação entre aplicações em projetos progressivamente mais completos.</span>
-              </div>
-              <div class="metric-item">
-                <strong>Portfólio vivo</strong>
-                <span>Atualizo meus projetos com evolução constante, foco em publicação e posicionamento profissional.</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="recomendacoes">
-      <div class="container">
-        <div class="section-head reveal">
-          <div><h2>Recomendações</h2></div>
-          <p>Espaço para pessoas que acompanharam meus projetos, estudos ou colaborações registrarem uma percepção sobre meu trabalho e minha evolução.</p>
-        </div>
-
-        <div class="recommend-grid">
-          <article class="card reveal">
-            <h3>Deixe uma recomendação</h3>
-            <p>
-              Preencha os campos abaixo. A recomendação será enviada para análise e, após aprovação, exibida publicamente nesta seção do portfólio.
+        <article class="project project-featured reveal">
+          <div class="project-content">
+            <div class="project-index">01</div>
+            <p class="kicker">INTEGRAÇÃO DE SISTEMAS</p>
+            <h3>EchoCraft + EchoPanel</h3>
+            <p class="project-summary">
+              Ecossistema de memória temporal para servidores Minecraft. Um plugin Paper em Java registra snapshots, rastros e ações de jogadores;
+              um painel Laravel recebe atividades por API autenticada, organiza timelines e envia comandos remotos de restauração.
             </p>
 
-            <form id="recommendationForm" style="margin-top: 18px; display: grid; gap: 12px;">
-              <div class="form-field">
-                <label class="field-label" for="recName">Seu nome</label>
-                <input id="recName" name="name" type="text" maxlength="60" placeholder="Ex.: João Silva" required />
-              </div>
+            <div class="project-evidence">
+              <div><strong>Java ↔ Laravel</strong><span>Comunicação por REST API autenticada</span></div>
+              <div><strong>Persistência</strong><span>SQLite, snapshots, histórico e auditoria</span></div>
+              <div><strong>Fluxo bidirecional</strong><span>Heartbeat, eventos e fila de comandos</span></div>
+            </div>
 
-              <div class="form-field">
-                <label class="field-label" for="recAvatar">URL da sua foto de perfil</label>
-                <input id="recAvatar" name="avatar" type="url" maxlength="400" placeholder="https://..." />
-                <div class="field-help">Pode ser a foto do LinkedIn, GitHub ou outra imagem pública.</div>
-              </div>
+            <div class="chips">
+              <span>Java</span><span>Paper API</span><span>Laravel</span><span>Livewire</span><span>REST</span><span>SQLite</span><span>Gradle</span>
+            </div>
 
-              <div class="form-field">
-                <label class="field-label" for="recText">Sua recomendação</label>
-                <textarea id="recText" name="text" rows="6" maxlength="800" placeholder="Escreva sua recomendação aqui..." required></textarea>
-              </div>
+            <div class="project-actions">
+              <a class="text-link" href="https://github.com/phmbezerra/EchoCraft" target="_blank" rel="noopener noreferrer">EchoCraft ↗</a>
+              <a class="text-link" href="https://github.com/phmbezerra/EchoPanel" target="_blank" rel="noopener noreferrer">EchoPanel ↗</a>
+            </div>
+          </div>
 
-              <button class="btn btn-primary" type="submit">Enviar recomendação</button>
-              <div id="formStatus" class="status-message" role="status" aria-live="polite"></div>
-            </form>
+          <div class="system-visual" aria-label="Fluxo bidirecional entre EchoCraft e EchoPanel">
+            <div class="flow-node node-minecraft">
+              <small>Servidor</small>
+              <strong>Minecraft</strong>
+              <span>Paper + EchoCraft</span>
+            </div>
 
-            <div class="glass-note">
-              <strong style="color: var(--text);">Observação:</strong> por segurança, novas recomendações entram como pendentes e podem ser aprovadas no painel do Supabase antes de aparecer publicamente.
+            <div class="flow-bus" aria-hidden="true">
+              <span class="flow-bus-label">REST API autenticada</span>
+              <div class="flow-route outbound"><b>→</b><span>heartbeat</span></div>
+              <div class="flow-route outbound"><b>→</b><span>activity sync</span></div>
+              <div class="flow-route inbound"><b>←</b><span>command queue</span></div>
+              <div class="flow-route inbound"><b>←</b><span>restore result</span></div>
+            </div>
+
+            <div class="flow-node node-panel">
+              <small>Aplicação web</small>
+              <strong>EchoPanel</strong>
+              <span>Laravel + Livewire</span>
+            </div>
+          </div>
+        </article>
+
+        <div class="project-grid">
+          <article class="project project-card reveal">
+            <div class="project-index">02</div>
+            <div class="project-media image-media accessvault-media">
+              <img src="https://raw.githubusercontent.com/phmbezerra/AccessVault/main/docs/dashboard.png" alt="Dashboard do projeto AccessVault" loading="lazy" />
+              <span class="media-caption">Dashboard real do projeto</span>
+            </div>
+            <div class="project-card-body">
+              <p class="kicker">FULL STACK</p>
+              <h3>AccessVault</h3>
+              <p>
+                Sistema web para centralizar usuários, sistemas e concessões de acesso. Possui backend em FastAPI, frontend React, persistência com SQLAlchemy/SQLite, login e dashboard operacional.
+              </p>
+              <div class="chips"><span>React</span><span>FastAPI</span><span>SQLAlchemy</span><span>SQLite</span><span>Vite</span></div>
+              <a class="text-link" href="https://github.com/phmbezerra/AccessVault" target="_blank" rel="noopener noreferrer">Ver repositório ↗</a>
             </div>
           </article>
 
-          <article class="card reveal">
-            <h3>O que já disseram</h3>
-            <p>As recomendações aprovadas aparecem aqui em ordem da mais recente para a mais antiga.</p>
-
-            <div class="tag-row">
-              <span class="chip">Público</span>
-              <span class="chip">Feedback profissional</span>
-              <span class="chip">Atualização automática</span>
+          <article class="project project-card reveal">
+            <div class="project-index">03</div>
+            <div class="project-media terminal-media" aria-hidden="true">
+              <div class="terminal-bar"><span></span><span></span><span></span><b>ECHO//SYSTEM</b></div>
+              <div class="terminal-screen">
+                <p>&gt; initializing archive...</p>
+                <p>&gt; identity: ELIAS</p>
+                <p>&gt; recovered endings: 7</p>
+                <p class="terminal-accent">&gt; system integrity: unstable_</p>
+              </div>
+              <div class="terminal-proof">
+                <span><b>v1.0.0</b> release estável</span>
+                <span><b>6</b> capítulos</span>
+                <span><b>7</b> finais gerais</span>
+              </div>
             </div>
-
-            <div id="recommendationsList" class="recommend-list">
-              <div class="recommendation-empty">Nenhuma recomendação publicada ainda. Seja a primeira pessoa a deixar um feedback profissional.</div>
+            <div class="project-card-body">
+              <p class="kicker">REACT / EXPERIÊNCIA INTERATIVA</p>
+              <h3>ECHO//SYSTEM</h3>
+              <p>
+                Jogo narrativo completo apresentado como um sistema operacional corrompido. A versão 1.0 inclui múltiplas rotas e finais, save local com exportação/importação e áudio procedural via Web Audio API.
+              </p>
+              <div class="chips"><span>React</span><span>Vite</span><span>JavaScript</span><span>Web Audio API</span><span>Local Storage</span></div>
+              <a class="text-link" href="https://github.com/phmbezerra/echo-system" target="_blank" rel="noopener noreferrer">Ver repositório ↗</a>
             </div>
+          </article>
+        </div>
+
+        <article class="project research-card reveal">
+          <div class="research-copy">
+            <div class="project-index">04</div>
+            <div class="private-label">Case privado</div>
+            <p class="kicker">PESQUISA EM COMPUTAÇÃO</p>
+            <h3>LMWI-Scheduler</h3>
+            <p>
+              Projeto de pesquisa sobre <strong>Locational Marginal Water Impact (LMWI)</strong>, explorando como sinais locacionais de impacto hídrico podem ser incorporados a decisões de scheduling de cargas computacionais.
+            </p>
+            <p>
+              O trabalho combina simulação, cenários experimentais, hipóteses pré-definidas e análise quantitativa. O código permanece privado enquanto a pesquisa amadurece; aqui o foco é apresentar o problema, a metodologia e o processo experimental sem expor o repositório.
+            </p>
+            <div class="chips"><span>Python</span><span>Scheduling</span><span>Simulação</span><span>Experimentação</span><span>Análise de dados</span></div>
+          </div>
+          <div class="research-visual" aria-label="Pipeline metodológico do LMWI-Scheduler">
+            <div class="research-pipeline">
+              <div class="pipeline-node">
+                <small>01 · Entrada</small>
+                <strong>Workload + cenários</strong>
+                <span>Cargas, localização e condições experimentais</span>
+              </div>
+              <div class="pipeline-arrow" aria-hidden="true">↓</div>
+              <div class="pipeline-node accent-node">
+                <small>02 · Sinal</small>
+                <strong>LMWI locacional</strong>
+                <span>Impacto hídrico marginal associado à decisão</span>
+              </div>
+              <div class="pipeline-arrow" aria-hidden="true">↓</div>
+              <div class="pipeline-node">
+                <small>03 · Decisão</small>
+                <strong>Scheduler</strong>
+                <span>Política de alocação avaliada em simulação</span>
+              </div>
+              <div class="pipeline-arrow" aria-hidden="true">↓</div>
+              <div class="pipeline-node metric-node">
+                <small>04 · Avaliação</small>
+                <strong>Métricas</strong>
+                <span>Impacto hídrico, deadlines e comparação de cenários</span>
+              </div>
+            </div>
+            <p class="pipeline-note">Diagrama metodológico — não representa uma curva de resultados.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="laboratorio" class="section muted-section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><p class="kicker">LABORATÓRIO</p><h2>Coisas que ainda estão virando produto.</h2></div>
+          <p>Experimentos técnicos que ainda não têm uma versão pública completa, mas representam áreas em que estou explorando arquitetura e interoperabilidade.</p>
+        </div>
+
+        <article class="lab-card reveal">
+          <div class="lab-status"><span></span> Em desenvolvimento</div>
+          <div class="lab-main">
+            <h3>ECHOBRIDGE</h3>
+            <p>Protótipo de bridge server-side para ampliar a compatibilidade visual de itens Java modded em clientes Bedrock, trabalhando com Fabric, Geyser e geração de resource packs.</p>
+
+            <div class="lab-progress" aria-label="Progresso técnico do ECHOBRIDGE">
+              <div><span>✓</span><b>Scanner de itens</b><small>detecção funcional no ambiente de teste</small></div>
+              <div><span>✓</span><b>Registro no Geyser</b><small>custom items chegando à camada de compatibilidade</small></div>
+              <div><span>✓</span><b>Resource pack</b><small>geração automatizada já implementada</small></div>
+            </div>
+          </div>
+          <div class="chips"><span>Java</span><span>Fabric</span><span>Geyser</span><span>Resource Packs</span><span>Interoperabilidade</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="stack" class="section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><p class="kicker">STACK</p><h2>Ferramentas que aparecem no meu trabalho.</h2></div>
+          <p>Em vez de níveis percentuais, organizo as tecnologias pelo tipo de problema em que já as utilizei.</p>
+        </div>
+
+        <div class="stack-grid">
+          <article class="stack-card reveal">
+            <span class="stack-number">01</span><h3>Back-end & APIs</h3>
+            <p>Construção de serviços, regras de negócio, integração e persistência.</p>
+            <div class="chips"><span>Java</span><span>Laravel</span><span>PHP</span><span>Python</span><span>FastAPI</span><span>REST</span></div>
+          </article>
+          <article class="stack-card reveal">
+            <span class="stack-number">02</span><h3>Front-end</h3>
+            <p>Interfaces responsivas, experiências interativas e integração com APIs.</p>
+            <div class="chips"><span>React</span><span>JavaScript</span><span>HTML</span><span>CSS</span><span>Livewire</span><span>Vite</span></div>
+          </article>
+          <article class="stack-card reveal">
+            <span class="stack-number">03</span><h3>Dados</h3>
+            <p>Modelagem relacional, persistência local e integração com aplicações.</p>
+            <div class="chips"><span>SQLite</span><span>PostgreSQL</span><span>Supabase</span><span>SQLAlchemy</span></div>
+          </article>
+          <article class="stack-card reveal">
+            <span class="stack-number">04</span><h3>Ferramentas &amp; práticas</h3>
+            <p>Versionamento, builds, documentação, depuração e experimentação.</p>
+            <div class="chips"><span>Git</span><span>GitHub</span><span>Gradle</span><span>Docker</span><span>Testes</span><span>Documentação</span></div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="contato">
-      <div class="container">
-        <div class="section-head reveal">
-          <div><h2>Contato</h2></div>
-          <p>Para conversar sobre tecnologia, projetos, estudos ou possíveis colaborações, estes são os canais principais para me encontrar.</p>
+    <section id="sobre" class="section muted-section">
+      <div class="container about-grid">
+        <div class="about-copy reveal">
+          <p class="kicker">SOBRE</p>
+          <h2>Eu aprendo construindo.</h2>
+          <p>
+            Curso Ciência da Computação no CEUB e desenvolvo projetos para transformar conceitos em software funcional.
+            Tenho interesse especial por integração entre sistemas, aplicações full stack, automação, APIs, bancos de dados e pesquisa computacional.
+          </p>
+          <p>
+            Meu processo passa por prototipação, implementação incremental, investigação de falhas, documentação e refinamento.
+            Prefiro demonstrar conhecimento por meio de decisões técnicas e entregas verificáveis.
+          </p>
+          <div class="about-actions">
+            <a class="btn btn-secondary" href="assets/docs/Paulo_Henrique_Curriculo_Profissional.pdf" target="_blank" rel="noopener noreferrer">Abrir currículo ↗</a>
+            <a class="btn btn-secondary" href="https://www.linkedin.com/in/paulo-henrique-melo-bezerra-8b1b28372/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          </div>
         </div>
 
-        <div class="contact-grid">
-          <article class="card contact-box reveal">
-            <div class="contact-item">
-              <small>Email</small>
-              <a href="mailto:paulohenriquemelobezerra1@gmail.com">paulohenriquemelobezerra1@gmail.com</a>
-            </div>
-            <div class="contact-item">
-              <small>GitHub</small>
-              <a href="https://github.com/phmbezerra" target="_blank" rel="noopener noreferrer">github.com/phmbezerra</a>
-            </div>
-            <div class="contact-item">
-              <small>LinkedIn</small>
-              <a href="https://www.linkedin.com/in/paulo-henrique-melo-bezerra-8b1b28372/" target="_blank" rel="noopener noreferrer">linkedin.com/in/paulo-henrique-melo-bezerra-8b1b28372</a>
-            </div>
-            <div class="contact-item">
-              <small>Portfólio</small>
-              <a href="https://phmbezerra.github.io/portfolioHUB/" target="_blank" rel="noopener noreferrer">phmbezerra.github.io/portfolioHUB/</a>
-            </div>
-          </article>
+        <div class="timeline-card reveal">
+          <p class="kicker">FORMAÇÃO & EVOLUÇÃO</p>
+          <div class="timeline-item"><span>Atual</span><div><strong>Ciência da Computação — CEUB</strong><p>Formação acadêmica combinada com desenvolvimento autoral e pesquisa prática.</p></div></div>
+          <div class="timeline-item"><span>Projetos</span><div><strong>Integração, web e sistemas</strong><p>Java/Paper, Laravel, React, FastAPI, automações e bancos relacionais.</p></div></div>
+          <div class="timeline-item"><span>Pesquisa</span><div><strong>LMWI-Scheduler</strong><p>Experimentação computacional aplicada a scheduling e impacto hídrico locacional.</p></div></div>
+        </div>
+      </div>
+    </section>
 
-          <article class="card reveal">
-            <h3>Vamos construir algo interessante</h3>
-            <p>
-              Gosto de trocar ideias sobre desenvolvimento, aprender com outros profissionais e participar de projetos que envolvam criatividade, lógica e solução de problemas. Meus canais estão abertos para contato, colaboração e novas conexões na área de tecnologia.
-            </p>
-            <div class="hero-actions" style="margin-top:18px;">
-              <a class="btn btn-primary" href="mailto:paulohenriquemelobezerra1@gmail.com">Enviar email</a>
-              <a class="btn btn-secondary" href="https://mail.google.com/mail/?view=cm&fs=1&to=paulohenriquemelobezerra1@gmail.com" target="_blank" rel="noopener noreferrer">Abrir no Gmail</a>
-              <a class="btn btn-secondary" href="https://github.com/phmbezerra" target="_blank" rel="noopener noreferrer">Abrir GitHub</a>
-              <a class="btn btn-secondary" href="https://www.linkedin.com/in/paulo-henrique-melo-bezerra-8b1b28372/" target="_blank" rel="noopener noreferrer">Abrir LinkedIn</a>
-            </div>
-          </article>
+    <section class="section archive-section">
+      <div class="container">
+        <div class="section-heading compact reveal">
+          <div><p class="kicker">ARQUIVO / EVOLUÇÃO</p><h2>Projetos anteriores.</h2></div>
+          <p>Projetos menores que registram etapas anteriores da minha evolução técnica.</p>
+        </div>
+        <div class="archive-grid">
+          <a class="archive-item reveal" href="https://github.com/phmbezerra/organizador-de-arquivos" target="_blank" rel="noopener noreferrer"><span>Python / Automação</span><strong>Organizador de Arquivos</strong><b>Ver repositório ↗</b></a>
+          <a class="archive-item reveal" href="https://github.com/phmbezerra/sistema-estoque-python" target="_blank" rel="noopener noreferrer"><span>Python / SQLite</span><strong>Sistema de Estoque</strong><b>Ver repositório ↗</b></a>
+          <a class="archive-item reveal" href="https://github.com/phmbezerra/cadastro-clientes-python" target="_blank" rel="noopener noreferrer"><span>Python</span><strong>Cadastro de Clientes</strong><b>Ver repositório ↗</b></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="section contact-section">
+      <div class="container contact-card reveal">
+        <div>
+          <p class="kicker">CONTATO</p>
+          <h2>Quer conversar sobre software, projetos ou oportunidades?</h2>
+          <p>Você pode me encontrar por e-mail, LinkedIn ou GitHub.</p>
+          <a class="contact-email" href="mailto:paulohenriquemelobezerra1@gmail.com">paulohenriquemelobezerra1@gmail.com</a>
+        </div>
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="mailto:paulohenriquemelobezerra1@gmail.com">Enviar e-mail</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/paulo-henrique-melo-bezerra-8b1b28372/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a class="btn btn-secondary" href="https://github.com/phmbezerra" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container footer-box">
-      <span>© 2026 Paulo Henrique de Melo Bezerra</span>
-      <span>Desenvolvimento de software • Projetos, aprendizado e evolução contínua.</span>
-      <span><a href="https://www.linkedin.com/in/paulo-henrique-melo-bezerra-8b1b28372/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></span>
+    <div class="container footer-content">
+      <span>© <span id="year"></span> Paulo Henrique de Melo Bezerra</span>
+      <span>Construído com HTML, CSS e JavaScript.</span>
     </div>
   </footer>
 
-  <script type="module">
-    const SUPABASE_URL = 'https://tfeycufjmblzfwpelsxs.supabase.co';
-    const SUPABASE_ANON_KEY = 'sb_publishable_rtz2gjQp2xZ7HgL5si0TBQ_6GcAwBzK';
-    const DEFAULT_AVATAR = 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80';
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.14 });
-
-    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-
-    const navToggle = document.querySelector('.nav-toggle');
-    const mainNav = document.getElementById('mainNav');
-
-    navToggle?.addEventListener('click', () => {
-      const isOpen = mainNav.classList.toggle('open');
-      navToggle.setAttribute('aria-expanded', String(isOpen));
-      navToggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
-      navToggle.textContent = isOpen ? '×' : '☰';
-    });
-
-    mainNav?.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => {
-        mainNav.classList.remove('open');
-        navToggle?.setAttribute('aria-expanded', 'false');
-        if (navToggle) {
-          navToggle.setAttribute('aria-label', 'Abrir menu');
-          navToggle.textContent = '☰';
-        }
-      });
-    });
-
-    const form = document.getElementById('recommendationForm');
-    const list = document.getElementById('recommendationsList');
-    const status = document.getElementById('formStatus');
-    const approvedCount = document.getElementById('approvedCount');
-
-    let supabase = null;
-
-    function setStatus(message, type) {
-      status.textContent = message;
-      status.className = `status-message ${type}`;
-    }
-
-    function escapeHtml(text) {
-      const div = document.createElement('div');
-      div.textContent = text;
-      return div.innerHTML;
-    }
-
-    function formatDate(dateString) {
-      const date = new Date(dateString);
-      if (Number.isNaN(date.getTime())) return 'Data indisponível';
-
-      return date.toLocaleDateString('pt-BR', {
-        day: '2-digit',
-        month: 'long',
-        year: 'numeric'
-      });
-    }
-
-    function safeImageUrl(value) {
-      if (!value) return DEFAULT_AVATAR;
-
-      try {
-        const url = new URL(value);
-        return ['http:', 'https:'].includes(url.protocol) ? url.href : DEFAULT_AVATAR;
-      } catch {
-        return DEFAULT_AVATAR;
-      }
-    }
-
-    function renderRecommendations(items) {
-      approvedCount.textContent = String(items?.length || 0);
-
-      if (!items || items.length === 0) {
-        list.innerHTML = '<div class="recommendation-empty">Nenhuma recomendação publicada ainda. Seja a primeira pessoa a deixar um feedback profissional.</div>';
-        return;
-      }
-
-      list.innerHTML = items.map(item => `
-        <article class="recommendation-card">
-          <div class="recommendation-top">
-            <img class="recommendation-avatar" src="${safeImageUrl(item.avatar_url)}" alt="Foto de ${escapeHtml(item.name)}" loading="lazy" onerror="this.src='${DEFAULT_AVATAR}'">
-            <div>
-              <div class="recommendation-name">${escapeHtml(item.name)}</div>
-              <div class="recommendation-date">${formatDate(item.created_at)}</div>
-            </div>
-          </div>
-          <div class="recommendation-text">${escapeHtml(item.message)}</div>
-        </article>
-      `).join('');
-    }
-
-    async function loadRecommendations() {
-      if (!supabase) {
-        list.innerHTML = '<div class="recommendation-empty">Configure o Supabase no script para carregar recomendações públicas de verdade.</div>';
-        approvedCount.textContent = '0';
-        return;
-      }
-
-      const { data, error } = await supabase
-        .from('recommendations')
-        .select('id, name, avatar_url, message, created_at')
-        .eq('approved', true)
-        .order('created_at', { ascending: false });
-
-      if (error) {
-        list.innerHTML = '<div class="recommendation-empty">Não foi possível carregar as recomendações agora.</div>';
-        approvedCount.textContent = '0';
-        console.error(error);
-        return;
-      }
-
-      renderRecommendations(data);
-    }
-
-    function isSupabaseConfigured() {
-      return SUPABASE_URL && SUPABASE_ANON_KEY && !SUPABASE_URL.includes('COLE_AQUI') && !SUPABASE_ANON_KEY.includes('COLE_AQUI');
-    }
-
-    async function initializeRecommendations() {
-      if (!isSupabaseConfigured()) {
-        await loadRecommendations();
-        return;
-      }
-
-      try {
-        const { createClient } = await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm');
-        supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-      } catch (error) {
-        console.error('Falha ao carregar o cliente do Supabase:', error);
-      }
-
-      await loadRecommendations();
-    }
-
-    initializeRecommendations();
-
-    form.addEventListener('submit', async (event) => {
-      event.preventDefault();
-
-      const name = form.name.value.trim();
-      const avatar = form.avatar.value.trim();
-      const text = form.text.value.trim();
-
-      if (!name || !text) {
-        setStatus('Preencha pelo menos seu nome e a recomendação.', 'error');
-        return;
-      }
-
-      if (!supabase) {
-        setStatus('Falta configurar o Supabase para salvar recomendações públicas.', 'error');
-        return;
-      }
-
-      const submitButton = form.querySelector('button[type="submit"]');
-      submitButton.disabled = true;
-      submitButton.textContent = 'Enviando...';
-
-      try {
-        const { error } = await supabase
-          .from('recommendations')
-          .insert([
-            {
-              name,
-              avatar_url: avatar || null,
-              message: text,
-              approved: false
-            }
-          ]);
-
-        if (error) throw error;
-
-        form.reset();
-        setStatus('Recomendação enviada com sucesso. Ela ficará visível após aprovação.', 'success');
-        await loadRecommendations();
-      } catch (error) {
-        console.error(error);
-        setStatus('Não foi possível enviar a recomendação agora.', 'error');
-      } finally {
-        submitButton.disabled = false;
-        submitButton.textContent = 'Enviar recomendação';
-      }
-    });
-  </script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
