@@ -149,20 +149,25 @@
             </div>
           </div>
 
-          <div class="system-visual" aria-label="Fluxo de integração entre EchoCraft e EchoPanel">
+          <div class="system-visual" aria-label="Fluxo bidirecional entre EchoCraft e EchoPanel">
             <div class="flow-node node-minecraft">
               <small>Servidor</small>
               <strong>Minecraft</strong>
               <span>Paper + EchoCraft</span>
             </div>
-            <div class="flow-line"><span>API REST</span></div>
+
+            <div class="flow-bus" aria-hidden="true">
+              <span class="flow-bus-label">REST API autenticada</span>
+              <div class="flow-route outbound"><b>→</b><span>heartbeat</span></div>
+              <div class="flow-route outbound"><b>→</b><span>activity sync</span></div>
+              <div class="flow-route inbound"><b>←</b><span>command queue</span></div>
+              <div class="flow-route inbound"><b>←</b><span>restore result</span></div>
+            </div>
+
             <div class="flow-node node-panel">
               <small>Aplicação web</small>
               <strong>EchoPanel</strong>
               <span>Laravel + Livewire</span>
-            </div>
-            <div class="flow-details">
-              <span>heartbeat</span><span>snapshots</span><span>traces</span><span>commands</span>
             </div>
           </div>
         </article>
@@ -170,8 +175,9 @@
         <div class="project-grid">
           <article class="project project-card reveal">
             <div class="project-index">02</div>
-            <div class="project-media image-media">
+            <div class="project-media image-media accessvault-media">
               <img src="https://raw.githubusercontent.com/phmbezerra/AccessVault/main/docs/dashboard.png" alt="Dashboard do projeto AccessVault" loading="lazy" />
+              <span class="media-caption">Dashboard real do projeto</span>
             </div>
             <div class="project-card-body">
               <p class="kicker">FULL STACK</p>
@@ -193,6 +199,11 @@
                 <p>&gt; identity: ELIAS</p>
                 <p>&gt; recovered endings: 7</p>
                 <p class="terminal-accent">&gt; system integrity: unstable_</p>
+              </div>
+              <div class="terminal-proof">
+                <span><b>v1.0.0</b> release estável</span>
+                <span><b>6</b> capítulos</span>
+                <span><b>7</b> finais gerais</span>
               </div>
             </div>
             <div class="project-card-body">
@@ -221,12 +232,33 @@
             </p>
             <div class="chips"><span>Python</span><span>Scheduling</span><span>Simulação</span><span>Experimentação</span><span>Análise de dados</span></div>
           </div>
-          <div class="research-visual" aria-hidden="true">
-            <div class="research-axis axis-y"><span>impacto hídrico</span></div>
-            <div class="research-gridline g1"></div><div class="research-gridline g2"></div><div class="research-gridline g3"></div>
-            <div class="research-curve c1"></div><div class="research-curve c2"></div>
-            <div class="research-point p1"></div><div class="research-point p2"></div><div class="research-point p3"></div>
-            <div class="research-axis axis-x"><span>decisão de scheduling</span></div>
+          <div class="research-visual" aria-label="Pipeline metodológico do LMWI-Scheduler">
+            <div class="research-pipeline">
+              <div class="pipeline-node">
+                <small>01 · Entrada</small>
+                <strong>Workload + cenários</strong>
+                <span>Cargas, localização e condições experimentais</span>
+              </div>
+              <div class="pipeline-arrow" aria-hidden="true">↓</div>
+              <div class="pipeline-node accent-node">
+                <small>02 · Sinal</small>
+                <strong>LMWI locacional</strong>
+                <span>Impacto hídrico marginal associado à decisão</span>
+              </div>
+              <div class="pipeline-arrow" aria-hidden="true">↓</div>
+              <div class="pipeline-node">
+                <small>03 · Decisão</small>
+                <strong>Scheduler</strong>
+                <span>Política de alocação avaliada em simulação</span>
+              </div>
+              <div class="pipeline-arrow" aria-hidden="true">↓</div>
+              <div class="pipeline-node metric-node">
+                <small>04 · Avaliação</small>
+                <strong>Métricas</strong>
+                <span>Impacto hídrico, deadlines e comparação de cenários</span>
+              </div>
+            </div>
+            <p class="pipeline-note">Diagrama metodológico — não representa uma curva de resultados.</p>
           </div>
         </article>
       </div>
@@ -241,9 +273,15 @@
 
         <article class="lab-card reveal">
           <div class="lab-status"><span></span> Em desenvolvimento</div>
-          <div>
+          <div class="lab-main">
             <h3>ECHOBRIDGE</h3>
             <p>Protótipo de bridge server-side para ampliar a compatibilidade visual de itens Java modded em clientes Bedrock, trabalhando com Fabric, Geyser e geração de resource packs.</p>
+
+            <div class="lab-progress" aria-label="Progresso técnico do ECHOBRIDGE">
+              <div><span>✓</span><b>Scanner de itens</b><small>detecção funcional no ambiente de teste</small></div>
+              <div><span>✓</span><b>Registro no Geyser</b><small>custom items chegando à camada de compatibilidade</small></div>
+              <div><span>✓</span><b>Resource pack</b><small>geração automatizada já implementada</small></div>
+            </div>
           </div>
           <div class="chips"><span>Java</span><span>Fabric</span><span>Geyser</span><span>Resource Packs</span><span>Interoperabilidade</span></div>
         </article>
@@ -274,7 +312,7 @@
             <div class="chips"><span>SQLite</span><span>PostgreSQL</span><span>Supabase</span><span>SQLAlchemy</span></div>
           </article>
           <article class="stack-card reveal">
-            <span class="stack-number">04</span><h3>Engenharia</h3>
+            <span class="stack-number">04</span><h3>Ferramentas &amp; práticas</h3>
             <p>Versionamento, builds, documentação, depuração e experimentação.</p>
             <div class="chips"><span>Git</span><span>GitHub</span><span>Gradle</span><span>Docker</span><span>Testes</span><span>Documentação</span></div>
           </article>
@@ -288,11 +326,12 @@
           <p class="kicker">SOBRE</p>
           <h2>Eu aprendo construindo.</h2>
           <p>
-            Curso Ciência da Computação no CEUB e desenvolvo projetos para transformar conteúdo teórico em problemas concretos de software.
-            Tenho interesse especial por integração entre sistemas, aplicações full stack, automação, APIs, banco de dados e pesquisa computacional.
+            Curso Ciência da Computação no CEUB e desenvolvo projetos para transformar conceitos em software funcional.
+            Tenho interesse especial por integração entre sistemas, aplicações full stack, automação, APIs, bancos de dados e pesquisa computacional.
           </p>
           <p>
-            Meu processo costuma passar por prototipação, implementação incremental, investigação de falhas, documentação e refinamento. Prefiro mostrar decisões e entregas verificáveis a listar tecnologias isoladas.
+            Meu processo passa por prototipação, implementação incremental, investigação de falhas, documentação e refinamento.
+            Prefiro demonstrar conhecimento por meio de decisões técnicas e entregas verificáveis.
           </p>
           <div class="about-actions">
             <a class="btn btn-secondary" href="assets/docs/Paulo_Henrique_Curriculo_Profissional.pdf" target="_blank" rel="noopener noreferrer">Abrir currículo ↗</a>
@@ -316,9 +355,9 @@
           <p>Projetos menores que registram etapas anteriores da minha evolução técnica.</p>
         </div>
         <div class="archive-grid">
-          <a class="archive-item reveal" href="https://github.com/phmbezerra/organizador-de-arquivos" target="_blank" rel="noopener noreferrer"><span>Python / Automação</span><strong>Organizador de Arquivos</strong><b>↗</b></a>
-          <a class="archive-item reveal" href="https://github.com/phmbezerra/sistema-estoque-python" target="_blank" rel="noopener noreferrer"><span>Python / SQLite</span><strong>Sistema de Estoque</strong><b>↗</b></a>
-          <a class="archive-item reveal" href="https://github.com/phmbezerra/cadastro-clientes-python" target="_blank" rel="noopener noreferrer"><span>Python</span><strong>Cadastro de Clientes</strong><b>↗</b></a>
+          <a class="archive-item reveal" href="https://github.com/phmbezerra/organizador-de-arquivos" target="_blank" rel="noopener noreferrer"><span>Python / Automação</span><strong>Organizador de Arquivos</strong><b>Ver repositório ↗</b></a>
+          <a class="archive-item reveal" href="https://github.com/phmbezerra/sistema-estoque-python" target="_blank" rel="noopener noreferrer"><span>Python / SQLite</span><strong>Sistema de Estoque</strong><b>Ver repositório ↗</b></a>
+          <a class="archive-item reveal" href="https://github.com/phmbezerra/cadastro-clientes-python" target="_blank" rel="noopener noreferrer"><span>Python</span><strong>Cadastro de Clientes</strong><b>Ver repositório ↗</b></a>
         </div>
       </div>
     </section>
@@ -329,6 +368,7 @@
           <p class="kicker">CONTATO</p>
           <h2>Quer conversar sobre software, projetos ou oportunidades?</h2>
           <p>Você pode me encontrar por e-mail, LinkedIn ou GitHub.</p>
+          <a class="contact-email" href="mailto:paulohenriquemelobezerra1@gmail.com">paulohenriquemelobezerra1@gmail.com</a>
         </div>
         <div class="contact-actions">
           <a class="btn btn-primary" href="mailto:paulohenriquemelobezerra1@gmail.com">Enviar e-mail</a>
