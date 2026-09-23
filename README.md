@@ -1,93 +1,40 @@
-<div align="center">
+# Paulo Henrique — Portfolio HUB v3
 
-# Paulo Henrique — Portfólio de Desenvolvimento de Software
+Portfólio pessoal de **Paulo Henrique de Melo Bezerra**, estudante de Ciência da Computação no CEUB e desenvolvedor de software em formação.
 
-Portfólio pessoal e profissional com projetos de desenvolvimento full stack, integração entre sistemas, automação, banco de dados e interfaces responsivas.
-
-[![Portfólio](https://img.shields.io/badge/Portfólio-Acessar-59a8ff?style=for-the-badge&logo=google-chrome&logoColor=white)](https://phmbezerra.github.io/portfolioHUB/)
-[![GitHub](https://img.shields.io/badge/GitHub-phmbezerra-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/phmbezerra)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Paulo%20Henrique-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/paulo-henrique-melo-bezerra-8b1b28372/)
-
-</div>
-
----
-
-## Sobre o projeto
-
-Este repositório apresenta minha trajetória em desenvolvimento de software e reúne os trabalhos que melhor representam minha evolução técnica.
-
-O portfólio destaca projetos que conectam interface, back-end, APIs, persistência, automação e documentação. O principal caso apresentado atualmente é o ecossistema **EchoCraft + EchoPanel**, formado por duas aplicações independentes que se comunicam por uma API autenticada.
-
-## Sobre mim
-
-Sou estudante de **Ciência da Computação no CEUB**, em Brasília/DF, e desenvolvedor de software em formação.
-
-Tenho interesse em desenvolvimento full stack, integrações entre sistemas, automação, APIs e banco de dados. Aprendo principalmente por meio da prática: construo protótipos, testo soluções, investigo falhas, registro decisões e aprimoro os projetos conforme encontro novos desafios.
+A versão 3 reorganiza o site em torno de **projetos selecionados e evidências técnicas**, reduzindo repetições e dando mais espaço aos trabalhos que melhor representam o nível atual de desenvolvimento.
 
 ## Projetos em destaque
 
-### EchoCraft + EchoPanel
+### 1. EchoCraft + EchoPanel
+Ecossistema de memória temporal para servidores Minecraft, integrando um plugin Paper em Java a um painel Laravel/Livewire por REST API autenticada.
 
-Ecossistema de memória temporal para servidores Minecraft.
+- EchoCraft: https://github.com/phmbezerra/EchoCraft
+- EchoPanel: https://github.com/phmbezerra/EchoPanel
 
-O **EchoCraft** é um plugin Paper em Java que registra versões de estruturas, rastros e ações de jogadores, persiste os dados em SQLite e restaura memórias temporais.
+### 2. AccessVault
+Sistema full stack de gestão de usuários, sistemas e acessos.
 
-O **EchoPanel** é um painel Laravel com Livewire que monitora servidores, exibe atividades e linhas do tempo visuais e envia comandos remotos de restauração ao plugin.
+**Stack:** React, Vite, FastAPI, SQLAlchemy e SQLite.
 
-**Tecnologias e conceitos:** Java, Paper API, Laravel, Livewire, PHP, REST API, SQLite, Gradle, autenticação por token, heartbeat e fila de comandos.
+- Repositório: https://github.com/phmbezerra/AccessVault
 
-- [Repositório do EchoCraft](https://github.com/phmbezerra/EchoCraft)
-- [Repositório do EchoPanel](https://github.com/phmbezerra/EchoPanel)
+### 3. ECHO//SYSTEM
+Jogo narrativo em React apresentado como um sistema operacional corrompido, com múltiplas rotas/finais, persistência local e áudio procedural via Web Audio API.
 
-### AccessVault
+- Repositório: https://github.com/phmbezerra/echo-system
 
-Plataforma de gestão de acessos com autenticação, níveis de permissão, solicitações, aprovação, geração de acessos e trilha de auditoria.
+### 4. LMWI-Scheduler
+Case de pesquisa computacional sobre **Locational Marginal Water Impact (LMWI)** aplicado a decisões de scheduling.
 
-**Tecnologias e conceitos:** React, FastAPI, JWT, SQLite, controle de acesso, auditoria e dashboard administrativo.
+O código permanece privado. O portfólio apresenta somente uma visão de alto nível do problema e da metodologia experimental.
 
-### Organizador de Arquivos
+## Laboratório
 
-Automação em Python para classificar arquivos por extensão, criar diretórios e gerar um resumo da execução.
+### ECHOBRIDGE
+Protótipo em desenvolvimento para ampliar a compatibilidade visual de itens Java modded em clientes Bedrock usando Fabric, Geyser e resource packs.
 
-**Tecnologias e conceitos:** Python, manipulação de arquivos e automação de tarefas repetitivas.
-
-### Sistema de Estoque
-
-Aplicação em Python com operações de cadastro, consulta, atualização e remoção de produtos.
-
-**Tecnologias e conceitos:** Python, SQLite, CRUD e persistência de dados.
-
-## Tecnologias do portfólio
-
-<div align="left">
-
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
-![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=flat-square&logo=laravel&logoColor=white)
-![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)
-![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white)
-![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-121013?style=flat-square&logo=github&logoColor=white)
-
-</div>
-
-## Principais recursos
-
-- layout responsivo para computador, tablet e celular;
-- navegação móvel acessível;
-- SEO básico, Open Graph e dados estruturados;
-- apresentação organizada de projetos e competências;
-- destaque para integração entre Java e Laravel;
-- currículo atualizado para download;
-- recomendações públicas integradas ao Supabase;
-- fallback para falhas de imagens e serviços externos;
-- suporte à preferência de movimento reduzido;
-- links diretos para projetos, GitHub, LinkedIn e email.
-
-## Estrutura esperada
+## Estrutura
 
 ```text
 portfolioHUB/
@@ -95,55 +42,38 @@ portfolioHUB/
 ├── README.md
 ├── .gitignore
 └── assets/
+    ├── css/
+    │   └── style.css
+    ├── js/
+    │   └── main.js
     ├── docs/
-    │   └── curriculo-paulo-henrique.pdf
+    │   └── Paulo_Henrique_Curriculo_Profissional.pdf
     └── img/
         ├── foto-perfil.jpg
         └── certificado-python.jpg
 ```
 
-## Executando localmente
+## Decisões da v3
+
+- projetos principais reduzidos a uma curadoria de quatro cases;
+- EchoCraft + EchoPanel tratados como um único ecossistema;
+- AccessVault descrito apenas com funcionalidades comprovadas no repositório atual;
+- LMWI-Scheduler apresentado como case privado, sem link para código;
+- ECHOBRIDGE identificado explicitamente como projeto em desenvolvimento;
+- projetos introdutórios movidos para uma área de evolução;
+- CSS e JavaScript extraídos do `index.html` para melhorar manutenção;
+- remoção da seção pública de recomendações da página principal;
+- link do currículo corrigido para o arquivo existente no repositório;
+- layout responsivo, navegação acessível e suporte a `prefers-reduced-motion`.
+
+## Executar localmente
 
 ```bash
-git clone https://github.com/phmbezerra/portfolioHUB.git
-cd portfolioHUB
 python -m http.server 8000
 ```
 
-Depois, acesse `http://localhost:8000`.
-
-## Recomendações com Supabase
-
-A seção de recomendações utiliza a tabela `recommendations` com os campos:
-
-```text
-id
-name
-avatar_url
-message
-approved
-created_at
-```
-
-Novas recomendações são registradas com `approved = false` e aparecem no site somente após aprovação.
-
-> A chave pública do Supabase pode ser utilizada no front-end, mas a proteção dos dados depende de políticas de **Row Level Security (RLS)** configuradas corretamente.
+Depois acesse `http://localhost:8000`.
 
 ## Publicação
 
-O projeto está preparado para publicação pelo GitHub Pages a partir da branch principal e da pasta raiz do repositório.
-
-## Contato
-
-- **Email:** paulohenriquemelobezerra1@gmail.com
-- **GitHub:** [github.com/phmbezerra](https://github.com/phmbezerra)
-- **LinkedIn:** [Paulo Henrique de Melo Bezerra](https://www.linkedin.com/in/paulo-henrique-melo-bezerra-8b1b28372/)
-- **Portfólio:** [phmbezerra.github.io/portfolioHUB](https://phmbezerra.github.io/portfolioHUB/)
-
----
-
-<div align="center">
-
-Desenvolvido e mantido por **Paulo Henrique de Melo Bezerra**.
-
-</div>
+O site é compatível com GitHub Pages e pode ser publicado diretamente a partir da raiz do repositório.
