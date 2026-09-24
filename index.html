@@ -221,44 +221,53 @@
         <article class="project research-card reveal">
           <div class="research-copy">
             <div class="project-index">04</div>
-            <div class="private-label">Case privado</div>
-            <p class="kicker">PESQUISA EM COMPUTAÇÃO</p>
-            <h3>LMWI-Scheduler</h3>
+            <div class="private-label">Pesquisa privada · v0.6</div>
+            <p class="kicker">PESQUISA · OTIMIZAÇÃO · POWER SYSTEMS</p>
+            <h3>LMWI Scheduler</h3>
             <p>
-              Projeto de pesquisa sobre <strong>Locational Marginal Water Impact (LMWI)</strong>, explorando como sinais locacionais de impacto hídrico podem ser incorporados a decisões de scheduling de cargas computacionais.
+              Protótipo de pesquisa para <strong>agendamento de cargas computacionais</strong> usando sinais locacionais marginais de carbono (LMCE) e impacto hídrico (LMWI) em um modelo de sistema elétrico com <strong>DC-OPF</strong>.
             </p>
             <p>
-              O trabalho combina simulação, cenários experimentais, hipóteses pré-definidas e análise quantitativa. O código permanece privado enquanto a pesquisa amadurece; aqui o foco é apresentar o problema, a metodologia e o processo experimental sem expor o repositório.
+              O programa combina integração marginal por blocos, avaliação física contrafactual e experimentos pré-registrados. As etapas mais recentes incorporam formas temporais observadas do <strong>ONS</strong>, coeficientes hídricos fundamentados em literatura e caracterização de escassez <strong>AWARE2.0</strong>, preservando resultados positivos, parciais e negativos.
             </p>
-            <div class="chips"><span>Python</span><span>Scheduling</span><span>Simulação</span><span>Experimentação</span><span>Análise de dados</span></div>
+
+            <div class="project-evidence research-evidence">
+              <div><strong>2.376 pares</strong><span>casos confirmatórios no EV6</span></div>
+              <div><strong>4.752 runs</strong><span>execuções de políticas no EV6</span></div>
+              <div><strong>EV1 → EV6</strong><span>seis camadas sequenciais de robustez</span></div>
+            </div>
+
+            <div class="chips">
+              <span>Python</span><span>NumPy</span><span>Pandas</span><span>SciPy</span><span>DC-OPF</span><span>Optimization</span><span>ONS</span><span>AWARE2.0</span>
+            </div>
           </div>
-          <div class="research-visual" aria-label="Pipeline metodológico do LMWI-Scheduler">
+          <div class="research-visual" aria-label="Pipeline metodológico do LMWI Scheduler">
             <div class="research-pipeline">
               <div class="pipeline-node">
-                <small>01 · Entrada</small>
-                <strong>Workload + cenários</strong>
-                <span>Cargas, localização e condições experimentais</span>
+                <small>01 · Sistema elétrico</small>
+                <strong>DC-OPF + fatores ambientais</strong>
+                <span>Rede, despacho, carbono, água e escassez</span>
               </div>
               <div class="pipeline-arrow" aria-hidden="true">↓</div>
               <div class="pipeline-node accent-node">
-                <small>02 · Sinal</small>
-                <strong>LMWI locacional</strong>
-                <span>Impacto hídrico marginal associado à decisão</span>
+                <small>02 · Sinais marginais</small>
+                <strong>LMCE + LMWI</strong>
+                <span>Impacto incremental dependente de local e estado da rede</span>
               </div>
               <div class="pipeline-arrow" aria-hidden="true">↓</div>
               <div class="pipeline-node">
-                <small>03 · Decisão</small>
-                <strong>Scheduler</strong>
-                <span>Política de alocação avaliada em simulação</span>
+                <small>03 · Scheduling</small>
+                <strong>Finite-load path integration</strong>
+                <span>Recomputação marginal ao longo da carga alocada</span>
               </div>
               <div class="pipeline-arrow" aria-hidden="true">↓</div>
               <div class="pipeline-node metric-node">
-                <small>04 · Avaliação</small>
-                <strong>Métricas</strong>
-                <span>Impacto hídrico, deadlines e comparação de cenários</span>
+                <small>04 · Evidência</small>
+                <strong>Contrafactual + pré-registro</strong>
+                <span>Critérios congelados, nulls, bootstrap e checkpoints</span>
               </div>
             </div>
-            <p class="pipeline-note">Diagrama metodológico — não representa uma curva de resultados.</p>
+            <p class="pipeline-note">Pipeline simplificado do método · release científica atual: v0.6</p>
           </div>
         </article>
       </div>
@@ -343,7 +352,7 @@
           <p class="kicker">FORMAÇÃO & EVOLUÇÃO</p>
           <div class="timeline-item"><span>Atual</span><div><strong>Ciência da Computação — CEUB</strong><p>Formação acadêmica combinada com desenvolvimento autoral e pesquisa prática.</p></div></div>
           <div class="timeline-item"><span>Projetos</span><div><strong>Integração, web e sistemas</strong><p>Java/Paper, Laravel, React, FastAPI, automações e bancos relacionais.</p></div></div>
-          <div class="timeline-item"><span>Pesquisa</span><div><strong>LMWI-Scheduler</strong><p>Experimentação computacional aplicada a scheduling e impacto hídrico locacional.</p></div></div>
+          <div class="timeline-item"><span>Pesquisa</span><div><strong>LMWI Scheduler</strong><p>Otimização de workloads com LMCE/LMWI, DC-OPF, ONS, AWARE2.0 e experimentos pré-registrados.</p></div></div>
         </div>
       </div>
     </section>

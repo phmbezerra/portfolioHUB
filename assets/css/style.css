@@ -197,6 +197,9 @@ button { font: inherit; }
 .research-copy { padding: 38px; }
 .research-copy h3 { font-size: clamp(2.1rem, 4vw, 3.8rem); }
 .research-copy > p:not(.kicker) { color: var(--muted); line-height: 1.8; max-width: 760px; }
+.research-evidence { margin-top: 24px; }
+.research-evidence strong { color: #eef5ff; }
+.research-evidence span { display: block; }
 .private-label { display: inline-flex; margin-bottom: 18px; padding: 7px 10px; border: 1px solid rgba(139,117,255,.26); color: #c9c0ff; background: rgba(139,117,255,.08); border-radius: 999px; font-size: .72rem; font-weight: 800; }
 .research-visual { min-height: 440px; padding: 34px; display: flex; flex-direction: column; justify-content: center; border-left: 1px solid var(--line); background: radial-gradient(circle at 50% 38%, rgba(139,117,255,.1), transparent 42%), linear-gradient(180deg, #0a1727, #07111f); }
 .research-pipeline { display: grid; justify-items: stretch; gap: 7px; }
