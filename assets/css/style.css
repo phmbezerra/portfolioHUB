@@ -117,9 +117,16 @@ button { font: inherit; }
 .projects-section { padding-top: 52px; }
 
 .profile-panel { border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; background: var(--surface); box-shadow: var(--shadow); }
-.profile-photo { aspect-ratio: 1 / .94; overflow: hidden; background: #102238; }
-.profile-photo img { width: 100%; height: 100%; object-fit: cover; }
+.profile-text-only {
+  position: relative; display: flex; align-items: flex-end; min-height: 390px;
+  background: radial-gradient(circle at 78% 22%, rgba(103,183,255,.18), transparent 28%), radial-gradient(circle at 20% 15%, rgba(139,117,255,.13), transparent 34%), linear-gradient(160deg, #0c1b2d, #08131f 68%);
+}
+.profile-text-only::before {
+  content: "</>"; position: absolute; top: 30px; right: 30px; color: rgba(213,225,239,.14);
+  font: 800 4.8rem/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: -.12em;
+}
 .profile-content { padding: 20px 22px 22px; }
+.profile-text-only .profile-content { position: relative; z-index: 1; width: 100%; padding: 34px; }
 .profile-content .kicker { color: var(--cyan); margin: 0 0 8px; }
 .profile-content h2 { margin: 0; font-size: 1.45rem; }
 .profile-content > p:not(.kicker) { color: var(--muted); line-height: 1.6; font-size: .9rem; }
@@ -269,8 +276,7 @@ footer { padding: 34px 0 48px; color: #71859d; font-size: .78rem; }
 @media (max-width: 980px) {
   .hero-grid, .project-featured, .research-card, .about-grid { grid-template-columns: 1fr; }
   .hero { padding-top: 64px; }
-  .profile-panel { display: grid; grid-template-columns: 260px 1fr; }
-  .profile-photo { aspect-ratio: auto; min-height: 300px; }
+  .profile-panel.profile-text-only { display: flex; min-height: 300px; }
   .system-visual, .research-visual { border-left: 0; border-top: 1px solid var(--line); min-height: 360px; }
   .accessvault-media { height: 300px; }
   .lab-progress { grid-template-columns: 1fr; }
@@ -293,8 +299,8 @@ footer { padding: 34px 0 48px; color: #71859d; font-size: .78rem; }
   .nav-links.open { display: flex; }
   .nav-links a { padding: 12px; }
   .project-grid, .stack-grid, .archive-grid { grid-template-columns: 1fr; }
-  .profile-panel { grid-template-columns: 1fr; }
-  .profile-photo { aspect-ratio: 1.2 / 1; min-height: 0; }
+  .profile-panel.profile-text-only { min-height: 260px; }
+  .profile-text-only .profile-content { padding: 28px; }
   .project-content, .research-copy { padding: 28px; }
   .project-media { height: 220px; }
   .accessvault-media { height: 270px; }
